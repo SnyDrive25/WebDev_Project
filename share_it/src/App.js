@@ -1,6 +1,7 @@
 import Navbar from './components/navbar/Navbar';
 import Timeline from './components/timeline/Timeline';
 import Tendances from './components/tendances/Tendances';
+import Login from './pages/login/Login';
 import './App.css';
 
 //import Tendances from './Tendances';
@@ -33,6 +34,9 @@ function App() {
   }
 
   return (
+    <Login/>
+
+    /*
     <div className="App">
       <div className="part20 bRight">
         <Navbar></Navbar>
@@ -45,9 +49,12 @@ function App() {
       <div className="part20 bLeft">
         <Tendances></Tendances>
       </div>
+      
 
     </div>
+  */
   );
 }
 
 export default App;
+
