@@ -1,0 +1,72 @@
+:root {
+    --bleu-light: rgb(245, 245, 255);
+    --main-light: rgb(254, 254, 255);
+    --bleu-dark: rgb(10, 10, 50);
+    --main-dark: rgb(5, 5, 25);
+}
+
+.loginPage {
+    text-align: center;
+    background-color: var(--bleu-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: var(--bleu-dark);
+}
+  
+h1 {
+    font-weight: bold;
+    font-size: 75px;
+}
+
+h2 {
+    font-size: 30px;
+    color: var(--main-dark);
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 40px;
+    color: var(--bleu-light);
+}
+
+.container {
+    width: fit-content;
+    margin: auto;
+    padding: 3% 5% 3% 5%;
+    border: 5px solid var(--main-dark);
+    border-radius: 25px;
+    background-color: var(--bleu-dark);
+    box-shadow: .2em .2em .5em var(--bleu-dark);
+}
+
+label {
+    color:var(--bleu-light);
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100px;
+    border-radius: 25px;
+    margin: 0 2px 0 2px;
+    padding: 3% 7% 3% 7%;
+    font-size: 17px;
+    border: 2px solid var(--main-light);
+}
+
+#login {
+    color: var(--main-dark);
+    background-color: var(--main-light);
+    box-shadow: .2em .2em .5em var(--bleu-dark);
+}
+
+#register {
+    color: var(--main-light);
+    background-color: var(--blue-dark);
+    box-shadow: .2em .2em .5em var(--bleu-dark);
+}
