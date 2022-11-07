@@ -3,9 +3,6 @@ import Login from "./pages/login/Login"
 
 
 import './App.css';
-import Navbar from './Navbar';
-import Tendances from './Tendances';
-import FilActus from './FilActus';
 
 
 function App() {
