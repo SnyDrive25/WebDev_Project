@@ -1,0 +1,64 @@
+.part20 .part60 {
+    padding: 1em;
+    min-height: 70vh;
+}
+
+.part20 {
+    width: 20%;
+    display: grid;
+    background-color: var(--main-light);
+    padding: 3%;
+    z-index: 2;
+}
+
+.part60 {
+    width: 54%;
+}
+
+.bRight {
+    box-shadow: .2em 0em .5em var(--main-dark);
+}
+
+.bLeft {
+    box-shadow: -0.2em 0em .5em var(--main-dark);
+}
+
+
+h1 {
+    color: var(--bleu-dark);
+    font-size: 3em;
+}
+
+h2 {
+    color: ghostwhite;
+    font-size: 2em;
+}
+
+.mode {
+    position: fixed;
+    top: 1vw;
+    left: 1vw;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--bleu-dark);
+    font-size: 2em;
+}
+
+.mode:hover {
+    cursor: pointer;
+}
+
+input {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2em;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: var(--main-light);
+    color: var(--bleu-dark);
+    box-shadow: 0 0 .2em var(--bleu-dark);
+    outline: none;
+    border: none;
+  }

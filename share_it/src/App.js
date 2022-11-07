@@ -1,36 +1,15 @@
-import logo from './logo.svg';
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login"
+
+
 import './App.css';
 import Navbar from './Navbar';
 import Tendances from './Tendances';
 import FilActus from './FilActus';
 
-//import Tendances from './Tendances';
-//import FilActus from './FilActus';
 
 function App() {
-  return (
-    <Login />
-
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  */
-  );
+  return <Home />;
 }
 
 export default App;
-
