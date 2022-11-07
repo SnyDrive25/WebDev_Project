@@ -9,6 +9,7 @@
     background-color: var(--main-light);
     padding: 3%;
     z-index: 2;
+    transition: all.4s;
 }
 
 .part60 {
@@ -27,6 +28,7 @@
 h1 {
     color: var(--bleu-dark);
     font-size: 3em;
+    transition: all.4s;
 }
 
 h2 {
@@ -61,4 +63,5 @@ input {
     box-shadow: 0 0 .2em var(--bleu-dark);
     outline: none;
     border: none;
-  }
+    transition: all.4s;
+}

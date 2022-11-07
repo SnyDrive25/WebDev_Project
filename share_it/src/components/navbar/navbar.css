@@ -7,13 +7,15 @@
 a {
     text-decoration: none;
     color: var(--bleu-dark);
+    transition: all.4s;
 }
 
 p {
     text-align: right;
     font-size: 2em;
     margin: 1em;
-    color: var(--bleu-dark)
+    color: var(--bleu-dark);
+    transition: all.4s;
 }
 
 .share {

@@ -20,6 +20,7 @@ article {
     border-top: 9px solid var(--bleu-dark);
     background-color: var(--main-light);
     min-height: 400px;
+    transition: all.4s;
 }
 
 article h1 {
