@@ -4,45 +4,20 @@ import Tendances from '../../components/tendances/Tendances';
 import './home.css'
 
 export default function Home() {
-    var rang = false;
+  return (
+    <div className="App">
+      <div className="part20 bRight">
+        <Navbar></Navbar>
+      </div>
+      <div className="part60">
+        <h1 className="title">ShareIt</h1>
+        <Timeline></Timeline>
+      </div>
+      <div className="part20 bLeft">
+        <input placeholder='Search...'></input>
+        <Tendances></Tendances>
+      </div>
 
-    if (document.cookie == "dark") {
-      changeColor();
-    }
-  
-    function changeColor() {
-      rang = !rang;
-      if (rang) {
-        document.documentElement.style.setProperty('--bleu-light', 'rgb(10, 10, 50)');
-        document.documentElement.style.setProperty('--main-light', 'rgb(5, 5, 25)');
-        document.documentElement.style.setProperty('--bleu-dark', 'rgb(245, 245, 255)');
-        document.documentElement.style.setProperty('--main-dark', 'rgb(254, 254, 255)');
-        document.cookie = "dark";
-      }
-      else {
-        document.documentElement.style.setProperty('--bleu-dark', 'rgb(10, 10, 50)');
-        document.documentElement.style.setProperty('--main-dark', 'rgb(5, 5, 25)');
-        document.documentElement.style.setProperty('--bleu-light', 'rgb(245, 245, 255)');
-        document.documentElement.style.setProperty('--main-light', 'rgb(254, 254, 255)');
-        document.cookie = "light";
-      }
-    }
-
-    return (
-        <div className="App">
-        <div className="part20 bRight">
-            <Navbar></Navbar>
-            <button className="mode" onClick={changeColor}>◑</button>
-        </div>
-        <div className="part60">
-            <h1 className="title">ShareIt</h1>
-            <Timeline></Timeline>
-        </div>
-        <div className="part20 bLeft">
-            <input placeholder='Search...'></input>
-            <Tendances></Tendances>
-        </div>
-
-        </div>
-    );
+    </div>
+  );
 }

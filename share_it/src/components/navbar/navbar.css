@@ -1,4 +1,5 @@
 .navbar {
+    position: relative;
     width: 100%;
     padding: 1em;
     padding-top: 25vh;
@@ -45,4 +46,28 @@ p {
 
 .underline:hover {
     text-decoration: underline var(--bleu-dark);
+}
+
+#logo {
+    height: 200px;
+    width: auto;
+    float: right;
+    margin-top: -200px;
+    transition: all.4s;
+}
+
+.mode {
+    position: absolute;
+    bottom: 1vw;
+    right: 1vw;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--bleu-dark);
+    font-size: 2em;
+}
+
+.mode:hover {
+    cursor: pointer;
 }
