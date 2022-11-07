@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
 
 function App() {
+
+  var rang = false;
+
+  if (document.cookie == "dark") {
+    changeColor();
+  }
+
+  function changeColor() {
+    rang = !rang;
+    if (rang) {
+      document.documentElement.style.setProperty('--bleu-light', 'rgb(10, 10, 50)');
+      document.documentElement.style.setProperty('--main-light', 'rgb(5, 5, 25)');
+      document.documentElement.style.setProperty('--bleu-dark', 'rgb(245, 245, 255)');
+      document.documentElement.style.setProperty('--main-dark', 'rgb(254, 254, 255)');
+    }
+    else {
+      document.documentElement.style.setProperty('--bleu-dark', 'rgb(10, 10, 50)');
+      document.documentElement.style.setProperty('--main-dark', 'rgb(5, 5, 25)');
+      document.documentElement.style.setProperty('--bleu-light', 'rgb(245, 245, 255)');
+      document.documentElement.style.setProperty('--main-light', 'rgb(254, 254, 255)');
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="part20 bRight">
+        <Navbar></Navbar>
+        <button className="mode" onClick={changeColor}>◑</button>
+      </div>
+      <div className="part60">
+        <h1>ShareIt</h1>
+      </div>
+      <div className="part20 bLeft">
+
+      </div>
+
+
     </div>
   );
 }
