@@ -1,41 +1,46 @@
 .tendances {
-    margin: 4%;
-    float: left;
-    background-color: var(--bleu-light);
-    border-radius: 25px;
-    box-shadow: 0 0 .7em black;
-  }
-  
-  .tendances span {
-    color: var(--bleu-dark);
-    font-weight: bold;
-    font-size: 1.5em;
-    background-color: transparent;
-    padding: 1%;
-  }
-  
-  .tendances div {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 17px;
-    width: 90%;
-    display: grid;
-    height: fit-content;
-    min-height: 75px;
-    border-radius: 10px;
-    background-color: var(--main-light);
-  }
-  
-  .tendances div h1 {
-    color: var(--main-dark);
-    font-size: 1em;
-    font-style: italic;
-    text-align: left;
-    margin-left: 7px;
-    opacity: .4;
-  }
-  
-  .tendances div a {
-    text-align: left;
-    margin-left: 7px;
-  }
+  margin: 4%;
+  float: left;
+  background-color: var(--bleu-light);
+  border-radius: 25px;
+  box-shadow: 0 0 .7em black;
+  transition: all.4s;
+}
+
+.tendances span {
+  color: var(--bleu-dark);
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: transparent;
+  padding: 1%;
+  transition: all.4s;
+}
+
+.tendances div {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 17px;
+  width: 90%;
+  display: grid;
+  height: fit-content;
+  min-height: 75px;
+  border-radius: 10px;
+  background-color: var(--main-light);
+  transition: all.4s;
+}
+
+.tendances div h1 {
+  color: var(--main-dark);
+  font-size: 1em;
+  font-style: italic;
+  text-align: left;
+  margin-left: 7px;
+  opacity: .4;
+  transition: all.4s;
+}
+
+.tendances div a {
+  text-align: left;
+  margin-left: 7px;
+  transition: all.4s;
+}
