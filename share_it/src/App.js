@@ -1,5 +1,7 @@
 import './App.css';
 import Navbar from './Navbar';
+import Tendances from './Tendances';
+import FilActus from './FilActus';
 
 function App() {
 
@@ -32,10 +34,11 @@ function App() {
         <button className="mode" onClick={changeColor}>◑</button>
       </div>
       <div className="part60">
-        <h1>ShareIt</h1>
+        <h1 className="title">ShareIt</h1>
+        <FilActus></FilActus>
       </div>
       <div className="part20 bLeft">
-
+        <Tendances></Tendances>
       </div>
 
 
