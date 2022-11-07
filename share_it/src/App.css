@@ -1,81 +1,29 @@
 :root {
-    --bleu-light: rgb(245, 245, 255);
-    --main-light: rgb(254, 254, 255);
-    --bleu-dark: rgb(10, 10, 50);
-    --main-dark: rgb(5, 5, 25);
-  }
-  
-  ::-moz-selection {
-    background: var(--bleu-dark);
-    color: #fff;
-    text-shadow: 2px 2px 4px black;
-  }
-  
-  ::selection {
-    background: var(--bleu-dark);
-    color: #fff;
-    text-shadow: 2px 2px 4px black;
-  }
-  
-  .App {
-    background-color: var(--bleu-light);
-    min-height: 100vh;
-    width: 100vw;
-    margin: 0;
-    display: flex;
-    text-align: center;
-    overflow-x: hidden;
-    transition: all.4s;
-  }
-  
-  .part20,
-  .part60 {
-    padding: 1em;
-    min-height: 70vh;
-  }
-  
-  .part20 {
-    width: 20%;
-    display: grid;
-    background-color: var(--main-light);
-    padding: 3%;
-    z-index: 2;
-  }
-  
-  .part60 {
-    width: 54%;
-  }
-  
-  .bRight {
-    box-shadow: .2em 0em .5em var(--main-dark);
-  }
-  
-  .bLeft {
-    box-shadow: -0.2em 0em .5em var(--main-dark);
-  }
-  
+  --bleu-light: rgb(245, 245, 255);
+  --main-light: rgb(254, 254, 255);
+  --bleu-dark: rgb(10, 10, 50);
+  --main-dark: rgb(5, 5, 25);
+}
 
-  h1 {
-    color: var(--bleu-dark);
-    font-size: 3em;
-  }
-  
-  h2 {
-    color: ghostwhite;
-    font-size: 2em;
-  }
-  
-  .mode {
-    position: fixed;
-    top: 1vw;
-    left: 1vw;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: var(--bleu-dark);
-    font-size: 2em;
-  }
-  
-  .mode:hover {
-    cursor: pointer;
-  }
+::-moz-selection {
+  background: var(--bleu-dark);
+  color: #fff;
+  text-shadow: 2px 2px 4px black;
+}
+
+::selection {
+  background: var(--bleu-dark);
+  color: #fff;
+  text-shadow: 2px 2px 4px black;
+}
+
+.App {
+  background-color: var(--bleu-light);
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  text-align: center;
+  overflow-x: hidden;
+  transition: all.4s;
+}
