@@ -2,7 +2,7 @@
 
 # To Do
 
-# Minimal features
+Minimal features
 Post messages
 User / password
 => signup
