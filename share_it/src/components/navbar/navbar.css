@@ -1,8 +1,53 @@
-.navbar {
-    position: relative;
-    width: 100%;
-    padding: 1em;
-    padding-top: 25vh;
+@media only screen and (max-width: 1249px) {
+
+    .navbar {
+        position: relative;
+        width: 90%;
+        padding: 1em;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    #logo {
+        height: 50px;
+        width: auto;
+        margin-top: 10px;
+        pointer-events: none;
+        filter: invert(1);
+        transition: all.4s;
+    }
+
+}
+
+@media only screen and (min-width: 1250px) {
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        padding: 1em;
+        padding-top: 25vh;
+    }
+
+    p {
+        text-align: right;
+    }
+
+    .share {
+        float: right;
+    }
+
+    #logo {
+        height: 200px;
+        width: auto;
+        float: right;
+        pointer-events: none;
+        margin-top: -200px;
+        filter: invert(1);
+        transition: all.4s;
+    }
+
 }
 
 a {
@@ -12,7 +57,6 @@ a {
 }
 
 p {
-    text-align: right;
     font-size: 2em;
     margin: 1em;
     color: var(--bleu-dark);
@@ -24,7 +68,6 @@ p {
     padding: 5%;
     width: auto;
     min-width: 200px;
-    float: right;
     border: none;
     color: var(--bleu-light);
     font-size: 2em;
@@ -52,7 +95,9 @@ p {
     height: 200px;
     width: auto;
     float: right;
+    pointer-events: none;
     margin-top: -200px;
+    filter: invert(1);
     transition: all.4s;
 }
 
@@ -60,7 +105,7 @@ p {
     position: absolute;
     bottom: 1vw;
     right: 1vw;
-    z-index: 10;
+    z-index: 100;
     background-color: transparent;
     border: none;
     outline: none;

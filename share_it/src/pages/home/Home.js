@@ -10,14 +10,12 @@ export default function Home() {
         <Navbar></Navbar>
       </div>
       <div className="part60">
-        <h1 className="title">ShareIt</h1>
         <Timeline></Timeline>
       </div>
-      <div className="part20 bLeft">
+      <div className="part20 bLeft block">
         <input placeholder='Search...'></input>
         <Tendances></Tendances>
       </div>
-
     </div>
   );
 }

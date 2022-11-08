@@ -1,6 +1,10 @@
 .tendances {
   margin: 4%;
   float: left;
+  height: 80vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--bleu-light);
   border-radius: 25px;
   box-shadow: 0 0 .7em black;

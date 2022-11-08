@@ -4,7 +4,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: calc(94vh - 25px);
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
@@ -21,8 +21,8 @@ article {
     width: 95%;
     height: fit-content;
     background-color: var(--main-light);
-    min-height: 400px;
-    padding-bottom: 5em;
+    min-height: 100px;
+    padding-bottom: 6em;
     transition: all.4s;
 }
 
@@ -45,10 +45,25 @@ article h1 {
     transition: all.4s;
 }
 
-.content {
+.contenu {
     margin-top: 25px;
     color: var(--main-dark);
-    text-align: left;
+    text-align: justify;
     font-size: 1em;
     transition: all.4s;
+}
+
+.link {
+    color: var(--bleu-dark);
+    text-decoration: underline;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.link:hover {
+    cursor: pointer;
 }
