@@ -1,0 +1,61 @@
+.profilepage {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: calc(94vh - 25px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(50px,100px);
+}
+.profilepicture{
+    grid-column: 1/3;
+    grid-row:1;
+}
+.username {
+  
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+.followers{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.following{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.editprofile{
+    margin-right:rigth;
+    margin-bottom: 25px;
+    padding: 9px;
+    width: 95%;
+    height: auto;
+    border-top: 9px solid var(--bleu-dark);
+    background-color: var(--main-light);
+    min-height: 400px;
+}
+
+.myshares{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.reshares{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.liked{
+    grid-column: 3;
+    grid-row: 3;
+}
+

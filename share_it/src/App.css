@@ -7,23 +7,40 @@
 
 ::-moz-selection {
   background: var(--bleu-dark);
-  color: #fff;
-  text-shadow: 2px 2px 4px black;
+  color: var(--bleu-light);
 }
 
 ::selection {
   background: var(--bleu-dark);
-  color: #fff;
-  text-shadow: 2px 2px 4px black;
+  color: var(--bleu-light);
 }
 
 .App {
   background-color: var(--bleu-light);
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   margin: 0;
-  display: flex;
   text-align: center;
   overflow-x: hidden;
   transition: all.4s;
+}
+
+@media only screen and (min-width: 1250px) {
+  .App {
+    display: flex;
+  }
+
+  @keyframes smooth {
+    20% {
+      transform: scale(1.01);
+    }
+
+    60% {
+      transform: scale(0.98);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
 }
