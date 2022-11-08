@@ -38,6 +38,12 @@
         float: right;
     }
 
+    .share:hover {
+        transform: scale(0.9);
+        box-shadow: 0 0 .3em var(--main-dark);
+        cursor: pointer;
+    }
+
     #logo {
         height: 200px;
         width: auto;
@@ -47,7 +53,6 @@
         filter: invert(1);
         transition: all.4s;
     }
-
 }
 
 a {
@@ -76,12 +81,6 @@ p {
     transition: all.4s;
 }
 
-.share:hover {
-    transform: scale(.9);
-    box-shadow: 0 0 .3em var(--main-dark);
-    cursor: pointer;
-}
-
 .underline {
     text-decoration: underline transparent;
     transition: all.4s;
@@ -107,10 +106,12 @@ p {
     right: 1vw;
     z-index: 100;
     background-color: transparent;
+    border-radius: 50px;
     border: none;
     outline: none;
     color: var(--bleu-dark);
     font-size: 2em;
+    transition: all.4s;
 }
 
 .mode:hover {

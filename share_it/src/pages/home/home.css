@@ -53,6 +53,12 @@
     .bLeft {
         box-shadow: -0.2em 0em .5em black;
     }
+
+    input:focus,
+    textarea:focus {
+        animation: smooth .7s;
+        box-shadow: 0 0 .9em var(--main-dark);
+    }
 }
 
 .block {
@@ -84,9 +90,4 @@ textarea {
     outline: none;
     border: none;
     transition: all.4s;
-}
-
-input:focus,
-textarea:focus {
-    box-shadow: 0 0 .9em var(--main-dark);
 }

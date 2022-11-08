@@ -13,7 +13,7 @@ export default function Home() {
         <Timeline></Timeline>
       </div>
       <div className="part20 bLeft block">
-        <input placeholder='Search...'></input>
+        <input placeholder='Search'></input>
         <Tendances></Tendances>
       </div>
     </div>

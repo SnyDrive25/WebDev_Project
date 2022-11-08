@@ -7,14 +7,12 @@
 
 ::-moz-selection {
   background: var(--bleu-dark);
-  color: #fff;
-  text-shadow: 2px 2px 4px black;
+  color: var(--bleu-light);
 }
 
 ::selection {
   background: var(--bleu-dark);
-  color: #fff;
-  text-shadow: 2px 2px 4px black;
+  color: var(--bleu-light);
 }
 
 .App {
@@ -30,5 +28,19 @@
 @media only screen and (min-width: 1250px) {
   .App {
     display: flex;
+  }
+
+  @keyframes smooth {
+    20% {
+      transform: scale(1.01);
+    }
+
+    60% {
+      transform: scale(0.98);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
 }
