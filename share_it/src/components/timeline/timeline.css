@@ -15,14 +15,15 @@ article {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 28px;
+    margin-bottom: 28px;
     padding: 9px;
     width: 95%;
     height: fit-content;
     background-color: var(--main-light);
     min-height: 100px;
     padding-bottom: 6em;
+    border-left: 1px solid var(--bleu-dark);
     transition: all.4s;
 }
 
@@ -65,4 +66,8 @@ article h1 {
 
 .link:hover {
     cursor: pointer;
+}
+
+button {
+    transition: all.4s;
 }
