@@ -38,6 +38,12 @@
         float: right;
     }
 
+    .share:hover {
+        transform: scale(0.9);
+        box-shadow: 0 0 .3em var(--main-dark);
+        cursor: pointer;
+    }
+
     #logo {
         height: 200px;
         width: auto;
@@ -74,12 +80,6 @@ p {
     background-color: var(--bleu-dark);
     box-shadow: 0 0 .7em var(--main-dark);
     transition: all.4s;
-}
-
-.share:hover {
-    transform: scale(.9);
-    box-shadow: 0 0 .3em var(--main-dark);
-    cursor: pointer;
 }
 
 .underline {

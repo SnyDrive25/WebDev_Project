@@ -88,5 +88,6 @@ textarea {
 
 input:focus,
 textarea:focus {
+    animation: smooth .7s;
     box-shadow: 0 0 .9em var(--main-dark);
 }

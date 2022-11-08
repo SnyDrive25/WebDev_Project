@@ -41,7 +41,6 @@ article h1 {
     bottom: 17px;
     left: 0;
     right: 0;
-    box-shadow: 0 0 .4em var(--main-dark);
     transition: all.4s;
 }
 
