@@ -19,11 +19,16 @@
 
 .App {
   background-color: var(--bleu-light);
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   margin: 0;
-  display: flex;
   text-align: center;
   overflow-x: hidden;
   transition: all.4s;
+}
+
+@media only screen and (min-width: 1250px) {
+  .App {
+    display: flex;
+  }
 }
