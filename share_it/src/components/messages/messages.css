@@ -1,0 +1,30 @@
+.messages {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    transition: all.4s;
+}
+
+.msg-title {
+    width: 100%;
+    height: 2em;
+    background-color: var(--main-light);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 2px solid var(--main-dark);
+}
+
+.msg-title p {
+    text-align: left;
+    font-size: 1.5em;
+}
+
+button {
+    transition: all.4s;
+}
