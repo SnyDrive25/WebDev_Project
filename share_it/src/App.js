@@ -15,6 +15,7 @@ export default function App() {
         <Route path="/Register" element={<Register />}></Route>
         <Route path="/Home" element={<Home />}></Route>
         <Route path="/Profile" element={<Home />}></Route>
+        <Route path="/editProfile" element={<Home />}></Route>
         <Route path="/Messages" element={<Home />}></Route>
       </Routes>
     </Router>
