@@ -1,6 +1,4 @@
-import React from "react";
 // import pdex from './image/pdex.png'
-import "./profile.css";
 
 function Profilepage() {
     return (

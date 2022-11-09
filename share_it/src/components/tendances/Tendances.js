@@ -1,4 +1,3 @@
-import "./tendances.css"
 
 function Tendances() {
 

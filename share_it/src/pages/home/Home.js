@@ -3,7 +3,6 @@ import Timeline from '../../components/timeline/Timeline';
 import Tendances from '../../components/tendances/Tendances';
 import Profilepage from '../../components/profile/Profile';
 import Messages from '../../components/messages/Messages';
-import './home.css'
 
 export default function Home() {
 

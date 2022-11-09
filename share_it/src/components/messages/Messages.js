@@ -1,5 +1,3 @@
-import './messages.css';
-
 
 function Messages() {
 
