@@ -73,7 +73,7 @@ textarea {
   transition: all.4s;
 }
 
-@media only screen and (min-width: 1250px) {
+@media only screen and (min-width: 1400px) {
   .App {
     display: flex;
   }
@@ -109,7 +109,7 @@ textarea {
 
 /* DEBUT Home */
 
-@media only screen and (max-width: 1249px) {
+@media only screen and (max-width: 1399px) {
 
   .part20 .part60 {
     padding: 1em;
@@ -133,7 +133,7 @@ textarea {
 
 }
 
-@media only screen and (min-width: 1250px) {
+@media only screen and (min-width: 1400px) {
   .part20 .part60 {
     padding: 1em;
     min-height: 70vh;
@@ -341,7 +341,7 @@ label {
 
 /* DEBUT Navbar */
 
-@media only screen and (max-width: 1249px) {
+@media only screen and (max-width: 1399px) {
 
   .navbar {
     position: relative;
@@ -369,7 +369,7 @@ label {
 
 }
 
-@media only screen and (min-width: 1250px) {
+@media only screen and (min-width: 1400px) {
 
   .navbar {
     position: relative;
@@ -499,12 +499,12 @@ p {
 /* DEBUT Profile */
 
 .profilepage {
-  margin: 2%;
   padding: 0;
+  padding-top: 1%;
   margin-left: auto;
   margin-right: auto;
   width: 96%;
-  height: 100%;
+  height: 99%;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
@@ -633,7 +633,7 @@ p {
 
 .navProfile div {
   color: var(--main-dark);
-  width: 30%;
+  width: calc(100% / 3);
   padding: 1%;
   font-size: 1em;
   margin: 0;
@@ -661,19 +661,27 @@ p {
   font-style: italic;
 }
 
-.myshares {
-  grid-column: 1;
-  grid-row: 3;
+#myshares {
+  display: block;
 }
 
-.reshares {
-  grid-column: 2;
-  grid-row: 3;
+#reshares,
+#liked {
+  display: none;
 }
 
-.liked {
-  grid-column: 3;
-  grid-row: 3;
+.profileContent {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--bleu-light);
+  height: fit-content;
+  min-height: 250px;
+}
+
+.historyProfileDiv {
+  padding: 1%;
 }
 
 /* FIN Profile */

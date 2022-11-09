@@ -22,7 +22,7 @@ function Timeline() {
 
     for (let publicc of publi) {
         toutes_les_publis.push(
-            <article id="bigger">
+            <article>
                 <h1>{publicc.title}</h1>
                 <br></br>
                 <p class="contenu" id={"content" + publicc.id}>{publicc.content.slice(0, 400)}</p>
