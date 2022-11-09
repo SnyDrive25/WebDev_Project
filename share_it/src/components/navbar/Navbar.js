@@ -28,7 +28,7 @@ function Navbar() {
             <p><a href="/Messages" class="underline">Messages</a></p>
             <p><a href="/Profile" class="underline">Profile</a></p>
             <button class="big-btn share">Write</button>
-            <button class="big-btn logout">Logout 🔒</button>
+            <button class="big-btn logout"><a href="/Login">Logout 🔒</a></button>
             <button className="mode" onClick={changeColor}>◑</button>
         </div >
     );
