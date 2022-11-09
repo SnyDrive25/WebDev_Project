@@ -70,3 +70,7 @@ button {
     background-color: var(--blue-dark);
     box-shadow: .2em .2em .5em var(--bleu-dark);
 }
+
+#login:hover, #register:hover {
+    cursor: pointer;
+}
