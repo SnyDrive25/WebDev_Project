@@ -59,8 +59,12 @@ button {
     border: 2px solid var(--main-light);
 }
 
-#login {
-    color: var(--main-dark);
-    background-color: var(--main-light);
+#register {
+    color: var(--main-light);
+    background-color: var(--blue-dark);
     box-shadow: .2em .2em .5em var(--bleu-dark);
+}
+
+#register:hover {
+    cursor: pointer;
 }
