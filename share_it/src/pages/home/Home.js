@@ -37,6 +37,7 @@ export default function Home() {
       <div className="part20 bLeft block">
         <input placeholder='Search...'></input>
         <Tendances></Tendances>
+        <a>Copyright ShareIt App © - 2022</a>
       </div>
     </div>
   );

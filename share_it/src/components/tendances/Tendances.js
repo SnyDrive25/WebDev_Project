@@ -9,7 +9,12 @@ function Tendances() {
     const toutes_les_tendances = [];
 
     for (let tendance of tendances) {
-        toutes_les_tendances.push(<div><h1>{tendance.title}</h1><a href="///">{tendance.content}</a></div>);
+        toutes_les_tendances.push(
+            <div>
+                <h1>{tendance.title}</h1>
+                <a href="///">{tendance.content}</a>
+            </div>
+        );
     }
 
     return (

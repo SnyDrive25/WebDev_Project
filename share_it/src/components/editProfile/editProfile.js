@@ -4,12 +4,14 @@ function EditProfile() {
 
     return (
         <div class="profilepage">
-            <div class="flex">
+            <div class="flex bluebg">
                 <div class="profile">
                     <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/default_user.png" alt="logo user" />
                 </div>
-
-                <div class="profile">
+                <div class="profile"></div>
+            </div>
+            <div class="statsProfile">
+                <div class="profile blue">
                     <p>Pseudo</p>
                     <input value={profile_infos.pseudo}></input>
                     <p>Mail adress</p>
