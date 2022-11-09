@@ -1,5 +1,6 @@
 import Home from "./pages/home/Home"
 import Login from "./pages/login/Login"
+import Register from "./pages/register/Register"
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import React, { Component } from 'react';
@@ -13,12 +14,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/Home" element={<Home />}></Route>
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
+        <Route path="/Register" element={<Register />}></Route>
       </Routes>
     </Router>
   );
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+}
