@@ -1,21 +1,25 @@
-import './login.css'
 import { useNavigate } from 'react-router-dom';
+import './register.css'
 
-export default function Login() {
 
+export default function Register() {
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-        let path = `Register`; 
+        let path = "/"; 
         navigate(path);
     }
 
     return (
-        <div className="loginPage">
+        <div className="registerPage">
             <h1>Share it</h1>
             <h2>Welcome</h2>
             <div className="container">
-                <form id="postLogin" action="Home">
-                    <h3>Login</h3>
+                <form id="postRegister" action="Login">
+                    <h3>Register</h3>
+                    <br/>
+                    <label>Mail Adress</label> 
+                    <br/>
+                    <input type="text" name="mail" id="mail" placeholder="Mail adress"/>
                     <br/>
                     <label>User Id</label> 
                     <br/>
@@ -26,8 +30,7 @@ export default function Login() {
                     <input type="password" name="mdp" id="mdp" placeholder="Password"/>
                     <br/>
                     <br/>
-                    <button type="submit" name="login" id="login">Login</button>
-                    <button name="register" id="register" onClick={routeChange}>Register</button>
+                    <button type="submit" name="register" id="register" onClick={routeChange}>Register</button>
                 </form>
             </div>
         </div>
