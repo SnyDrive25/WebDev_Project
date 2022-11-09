@@ -2,17 +2,26 @@ import Navbar from '../../components/navbar/Navbar';
 import Timeline from '../../components/timeline/Timeline';
 import Tendances from '../../components/tendances/Tendances';
 import Profilepage from '../../components/profile/Profile';
+import EditProfile from '../../components/editProfile/editProfile';
 import Messages from '../../components/messages/Messages';
 
 export default function Home() {
 
   const showAccordion = () => {
     var content = <Timeline></Timeline>;
-    if (window.location.pathname === '/Profile') {
-      content = <Profilepage></Profilepage>;
-    }
-    if (window.location.pathname === '/Messages') {
-      content = <Messages></Messages>;
+    switch (window.location.pathname) {
+      case '/Profile':
+        content = <Profilepage></Profilepage>;
+        break;
+      case '/editProfile':
+        content = <EditProfile></EditProfile>;
+        break;
+      case '/Messages':
+        content = <Messages></Messages>;
+        break;
+      default:
+        content = <Timeline></Timeline>;
+        break;
     }
     return content;
   }

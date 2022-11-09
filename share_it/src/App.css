@@ -15,6 +15,10 @@
   color: var(--bleu-light);
 }
 
+body {
+  overflow: hidden !important;
+}
+
 h1,
 h2,
 h3 {
@@ -37,6 +41,10 @@ h3 {
 
 button {
   transition: all.4s;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 input,
@@ -81,6 +89,20 @@ textarea {
 
     100% {
       transform: scale(1);
+    }
+  }
+
+  @keyframes dring {
+    20% {
+      transform: rotate(4deg) translate(1px);
+    }
+
+    60% {
+      transform: rotate(-4deg) translate(-2px);
+    }
+
+    100% {
+      transform: rotate(0deg) translate(1px);
     }
   }
 }
@@ -327,6 +349,11 @@ label {
     padding: 1em;
   }
 
+  .mode {
+    top: 1vw;
+    left: 1vw;
+  }
+
   p {
     text-align: center;
   }
@@ -351,18 +378,35 @@ label {
     padding-top: 25vh;
   }
 
+  .mode {
+    bottom: 1vw;
+    right: 1vw;
+  }
+
   p {
     text-align: right;
   }
 
-  .share {
+  .big-btn {
     float: right;
+  }
+
+  .share:hover,
+  .logout:hover {
+    cursor: pointer;
   }
 
   .share:hover {
     transform: scale(0.9);
     box-shadow: 0 0 .3em var(--main-dark);
-    cursor: pointer;
+  }
+
+  .logout:hover {
+    animation: dring .17s infinite;
+    filter: grayscale(0) contrast(1);
+    color: rgb(245, 245, 255) !important;
+    background-color: darkred !important;
+    box-shadow: 0 0 .3em rgb(5, 5, 25);
   }
 
   #logo {
@@ -389,20 +433,33 @@ p {
   transition: all.4s;
 }
 
-.share {
+.big-btn {
+  display: inline-block;
   border-radius: 50px;
   padding: 5%;
   width: auto;
-  min-width: 200px;
+  min-width: 51%;
+  margin-bottom: 25px;
   border: none;
-  color: var(--bleu-light);
   font-size: 2em;
-  background-color: var(--bleu-dark);
-  box-shadow: 0 0 .7em var(--main-dark);
   transition: all.4s;
 }
 
-.underline {
+.share {
+  color: var(--bleu-light);
+  background-color: var(--bleu-dark);
+  box-shadow: 0 0 .7em var(--main-dark);
+}
+
+.logout {
+  filter: grayscale(1) contrast(2);
+  color: var(--main-dark);
+  margin-top: 10%;
+  background-color: var(--bleu-light);
+  box-shadow: 0 0 .7em rgb(5, 5, 25);
+}
+
+.logout:hover .underline {
   text-decoration: underline transparent;
   transition: all.4s;
 }
@@ -423,8 +480,6 @@ p {
 
 .mode {
   position: absolute;
-  bottom: 1vw;
-  right: 1vw;
   z-index: 100;
   background-color: transparent;
   border-radius: 50px;
@@ -444,52 +499,166 @@ p {
 /* DEBUT Profile */
 
 .profilepage {
-  margin: 0;
+  margin: 2%;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 96%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(50px, 100px);
+  display: block;
+  background-color: var(--main-light);
   transition: all.4s;
 }
 
-.profilepicture {
-  grid-column: 1/3;
-  grid-row: 1;
+.flex {
+  display: flex;
 }
 
-.username {
-
-  grid-column: 1/4;
-  grid-row: 1/2;
+.bluebg {
+  position: relative;
+  background: linear-gradient(var(--bleu-dark) 55%, transparent 40%) no-repeat;
 }
 
-.followers {
-  grid-column: 1;
-  grid-row: 3;
+.profile {
+  min-width: 40%;
+  height: fit-content;
+  margin: 5%;
+  background-color: transparent !important;
+  transition: all.4s;
 }
 
-.following {
-  grid-column: 1;
-  grid-row: 4;
+.profile img {
+  width: 11em;
+  height: 11em;
+  border-radius: 9em;
+  border: none;
+  transition: all.4s;
+}
+
+.profile p {
+  margin: 2%;
+  padding: 0;
+  font-size: 1em;
+  text-align: left;
+}
+
+.profile input {
+  width: 90%;
+  margin: 2.5%;
+}
+
+.profile {
+  float: right;
+  min-width: 40%;
+  height: fit-content;
+  margin: 5%;
+  color: var(--bleu-dark);
+  border: none;
+  background-color: var(--main-light);
+  text-align: left;
 }
 
 .editprofile {
-  margin-right: rigth;
-  margin-bottom: 25px;
-  padding: 9px;
-  width: 95%;
-  height: auto;
-  border-top: 9px solid var(--bleu-dark);
+  position: absolute;
+  bottom: calc(45% - 1.5em);
+  right: 2%;
+  padding: 1%;
+  color: var(--main-dark);
+  font-size: 1.5em;
   background-color: var(--main-light);
-  min-height: 400px;
+  margin: 1%;
+  border: none;
+  outline: none;
+  width: fit-content;
+}
+
+.saveProfile {
+  width: fit-content;
+  background-color: var(--bleu-dark);
+  padding: 2%;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9px;
+  box-shadow: 0 0 .7em var(--bleu-dark);
+  transition: all.4s;
+}
+
+.saveProfile:hover {
+  box-shadow: 0 0 .2em var(--bleu-dark);
+  transform: scale(.95);
+}
+
+.saveProfile a {
+  color: var(--main-light);
+}
+
+.shadow {
+  border-radius: 11px;
+  box-shadow: 0 0 .7em black;
+}
+
+.shadow:hover {
+  transform: scale(.95);
+  box-shadow: 0 0 .2em black;
+}
+
+.statsProfile {
+  width: 100%;
+}
+
+.statsProfile p,
+.statsProfile a {
+  font-size: 1em;
+  text-align: left;
+  margin: .4em;
+  padding-right: 1%;
+  color: var(--main-dark);
+}
+
+.statsProfile p {
+  margin-left: 4%;
+}
+
+.navProfile {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-bottom: 4px solid var(--bleu-light);
+}
+
+.navProfile div {
+  color: var(--main-dark);
+  width: 30%;
+  padding: 1%;
+  font-size: 1em;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all.4s;
+}
+
+.navProfile div a {
+  color: var(--bleu-dark);
+  transition: all.4s;
+}
+
+.navProfile div:hover {
+  cursor: pointer;
+  background-color: var(--bleu-light);
+}
+
+.username {
+  font-weight: bold;
+}
+
+.followers,
+.following {
+  font-style: italic;
 }
 
 .myshares {
@@ -631,6 +800,7 @@ article h1 {
   outline: none;
   background-color: transparent;
   border-radius: 0;
+  transition: all.4s;
 }
 
 .link:hover {
