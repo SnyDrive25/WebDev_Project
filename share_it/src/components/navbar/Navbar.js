@@ -25,9 +25,9 @@ function Navbar() {
     return (
         <div class="navbar">
             <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo"></img>
-            <p><a href="/" class="underline">Home</a></p>
-            <p><a href="/" class="underline">Messages</a></p>
-            <p><a href="/" class="underline">Profile</a></p>
+            <p><a href="/Home" class="underline">Home</a></p>
+            <p><a href="/Messages" class="underline">Messages</a></p>
+            <p><a href="/Profile" class="underline">Profile</a></p>
             <button class="share">Write</button>
             <button className="mode" onClick={changeColor}>◑</button>
         </div >
