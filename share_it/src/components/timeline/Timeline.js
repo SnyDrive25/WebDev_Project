@@ -17,7 +17,7 @@ function Timeline() {
     }
 
     function lessContent(contenu, id) {
-        document.getElementById('content' + id).textContent = contenu.slice(0, 400);
+        document.getElementById('content' + id).textContent = contenu.slice(0, 100);
     }
 
     for (let publicc of publi) {
@@ -25,7 +25,7 @@ function Timeline() {
             <article>
                 <h1>{publicc.title}</h1>
                 <br></br>
-                <p class="contenu" id={"content" + publicc.id}>{publicc.content.slice(0, 400)}</p>
+                <p class="contenu" id={"content" + publicc.id}>{publicc.content.slice(0, 100)}</p>
                 <p class="link">
                     <button onClick={() => moreContent(publicc.content, publicc.id)} class="link">[See more]</button>
                     <button onClick={() => lessContent(publicc.content, publicc.id)} class="link">[See less]</button>

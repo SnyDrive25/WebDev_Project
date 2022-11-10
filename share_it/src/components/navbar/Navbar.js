@@ -21,13 +21,17 @@ function Navbar() {
         }
     }
 
+    function openWrite() {
+        document.getElementById('writeDiv').style.display = "block";
+    }
+
     return (
         <div class="navbar">
             <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo"></img>
             <p><a href="/Home" class="underline">Home</a></p>
             <p><a href="/Messages" class="underline">Messages</a></p>
             <p><a href="/Profile" class="underline">Profile</a></p>
-            <button class="big-btn share">Write</button>
+            <button class="big-btn share" onClick={openWrite}>Write</button>
             <button class="big-btn logout"><a href="/Login">Logout 🔒</a></button>
             <button className="mode" onClick={changeColor}>◑</button>
         </div >

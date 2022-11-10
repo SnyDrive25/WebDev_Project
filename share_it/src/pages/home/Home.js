@@ -26,6 +26,15 @@ export default function Home() {
     return content;
   }
 
+  function closeWrite() {
+    document.getElementById('writeDiv').style.display = "none";
+  }
+
+  function sendPublication() {
+    document.getElementById('writeDiv').style.display = "none";
+    // Add send code here
+  }
+
   return (
     <div className="App" onLoad={showAccordion()}>
       <div className="part20 bRight">
@@ -37,7 +46,12 @@ export default function Home() {
       <div className="part20 bLeft block">
         <input placeholder='Search...'></input>
         <Tendances></Tendances>
-        <a>Copyright ShareIt App © - 2022</a>
+        <a href="/Home">Copyright ShareIt App © - 2022</a>
+      </div>
+      <div id="writeDiv">
+        <button class="close" onClick={closeWrite}>X</button>
+        <textarea class="publicationInput noanimation" placeholder="Enter your message here"></textarea>
+        <button class="send" onClick={sendPublication}>Send message</button>
       </div>
     </div>
   );
