@@ -12,14 +12,14 @@ function Messages() {
 
     for (let message of messages) {
         every_messages.push(
-            <div class="msg-title">
+            <div className="msg-title">
                 <p>{message.name}</p>
             </div>
         );
     }
 
     return (
-        <div class="messages">
+        <div className="messages">
             {every_messages}
         </div >
     );

@@ -45,30 +45,30 @@ function Profilepage() {
             <article>
                 <h1>{input.title}</h1>
                 <br></br>
-                <p class="contenu" id={"content" + input.id}>{input.content.slice(0, 400)}</p>
-                <p class="link">
-                    <button onClick={() => moreContent(input.content, input.id)} class="link">[See more]</button>
-                    <button onClick={() => lessContent(input.content, input.id)} class="link">[See less]</button>
+                <p className="contenu" id={"content" + input.id}>{input.content.slice(0, 400)}</p>
+                <p className="link">
+                    <button onClick={() => moreContent(input.content, input.id)} className="link">[See more]</button>
+                    <button onClick={() => lessContent(input.content, input.id)} className="link">[See less]</button>
                 </p>
-                <textarea type="text" class="comment" placeholder='Write a comment'></textarea>
+                <textarea type="text" className="comment" placeholder='Write a comment'></textarea>
             </article>
         )
     }
 
     const shares =
-        <div class="historyProfileDiv">
+        <div className="historyProfileDiv">
             {allshares}
         </div>
         ;
 
     const reshares =
-        <div class="historyProfileDiv">
+        <div className="historyProfileDiv">
             {allreshares}
         </div>
         ;
 
     const liked =
-        <div class="historyProfileDiv">
+        <div className="historyProfileDiv">
             {allliked}
         </div>
         ;
@@ -91,32 +91,32 @@ function Profilepage() {
     }
 
     return (
-        <div class="profilepage">
-            <div class="flex bluebg">
-                <div class="profile">
+        <div className="profilepage">
+            <div className="flex bluebg">
+                <div className="profile">
                     <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/default_user.png" alt="logo user" />
                 </div>
 
-                <div class="profile">
-                    <button class="editprofile shadow"><a href="/editProfile">Edit my profile</a></button>
+                <div className="profile">
+                    <button className="editprofile shadow"><a href="/editProfile">Edit my profile</a></button>
                 </div>
             </div>
 
-            <div class="statsProfile">
-                <p class="username">{stats.username}</p>
+            <div className="statsProfile">
+                <p className="username">{stats.username}</p>
                 <p>
-                    <a class="followers" href="/Home">{stats.followers} followers</a>
-                    <a class="following" href="/Home">{stats.following} following</a>
+                    <a className="followers" href="/Home">{stats.followers} followers</a>
+                    <a className="following" href="/Home">{stats.following} following</a>
                 </p>
             </div>
 
-            <div class="flex navProfile">
+            <div className="flex navProfile">
                 <div><a onClick={() => setPage('shares')} href="/Profile">My shares</a></div>
                 <div><a onClick={() => setPage('reshares')} href="/Profile">ReShares</a></div>
                 <div><a onClick={() => setPage('liked')} href="/Profile">Shares liked</a></div>
             </div>
 
-            <div class="profileContent">
+            <div className="profileContent">
                 {goToPage()}
             </div>
         </div>
