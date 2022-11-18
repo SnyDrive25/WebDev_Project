@@ -18,7 +18,7 @@ function Tendances() {
     }
 
     return (
-        <div class="tendances">
+        <div className="tendances">
             <span>Tendances</span>
             {toutes_les_tendances}
         </div >

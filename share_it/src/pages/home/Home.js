@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <div className="App" onLoad={showAccordion()}>
+    <div className="App" onLoad={() => showAccordion()}>
       <div className="part20 bRight">
         <Navbar></Navbar>
       </div>
@@ -49,9 +49,9 @@ export default function Home() {
         <a href="/Home">Copyright ShareIt App © - 2022</a>
       </div>
       <div id="writeDiv">
-        <button class="close" onClick={closeWrite}>X</button>
-        <textarea class="publicationInput noanimation" placeholder="Enter your message here"></textarea>
-        <button class="send" onClick={sendPublication}>Send message</button>
+        <button className="close" onClick={closeWrite}>X</button>
+        <textarea className="publicationInput noanimation" placeholder="Enter your message here"></textarea>
+        <button className="send" onClick={sendPublication}>Send message</button>
       </div>
     </div>
   );

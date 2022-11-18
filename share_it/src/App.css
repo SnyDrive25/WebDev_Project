@@ -814,6 +814,7 @@ p {
 /* DEBUT Timeline */
 
 .timeline {
+  position: relative;
   margin: 0;
   padding: 0;
   margin-left: auto;
@@ -824,6 +825,35 @@ p {
   overflow-y: auto;
   scrollbar-width: none;
   transition: all.4s;
+}
+
+@media only screen and (min-width: 1400px) {
+  .blurup,
+  .blurdown {
+    position: fixed;
+    left: 0vw;
+    width: 100vw;
+    z-index: 1;
+    transition: all.4s;
+  }
+
+  .blurup {
+    top: 0;
+    height: 5vh;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 .4em black;
+  }
+
+  .blurdown {
+    bottom: 0;
+    height: 15vh;
+    background: linear-gradient(transparent 0%, var(--main-light) 90%);
+  }
+
+  .timeline {
+    padding-top: 5vh;
+    height: calc(100% - 5vh);
+  }
 }
 
 article {

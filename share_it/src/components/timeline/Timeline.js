@@ -25,19 +25,23 @@ function Timeline() {
             <article>
                 <h1>{publicc.title}</h1>
                 <br></br>
-                <p class="contenu" id={"content" + publicc.id}>{publicc.content.slice(0, 100)}</p>
-                <p class="link">
-                    <button onClick={() => moreContent(publicc.content, publicc.id)} class="link">[See more]</button>
-                    <button onClick={() => lessContent(publicc.content, publicc.id)} class="link">[See less]</button>
+                <p className="contenu" id={"content" + publicc.id}>{publicc.content.slice(0, 100)}</p>
+                <p className="link">
+                    <button onClick={() => moreContent(publicc.content, publicc.id)} className="link">[See more]</button>
+                    <button onClick={() => lessContent(publicc.content, publicc.id)} className="link">[See less]</button>
                 </p>
-                <textarea type="text" class="comment" placeholder='Write a comment'></textarea>
+                <textarea type="text" className="comment" placeholder='Write a comment'></textarea>
             </article >
         );
     }
 
     return (
-        <div class="timeline">
+        <div className="timeline">
+            <div className="blurup">
+                <h2>Publications</h2>
+            </div>
             {toutes_les_publis}
+            <div className="blurdown"></div>
         </div >
     );
 }
