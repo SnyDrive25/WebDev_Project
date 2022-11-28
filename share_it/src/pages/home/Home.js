@@ -4,6 +4,7 @@ import Tendances from '../../components/tendances/Tendances';
 import Profilepage from '../../components/profile/Profile';
 import EditProfile from '../../components/editProfile/editProfile';
 import Messages from '../../components/messages/Messages';
+import $ from 'jquery';
 
 export default function Home() {
 
@@ -32,7 +33,13 @@ export default function Home() {
 
   function sendPublication() {
     document.getElementById('writeDiv').style.display = "none";
-    // Add send code here
+    var msg = document.getElementById('message').value;
+    console.log(msg);
+    $.ajax({
+      url: "http://localhost/shareit/add_publication.php",
+      method: "POST",
+      data: { "message": msg }
+    })
   }
 
   return (
@@ -50,7 +57,7 @@ export default function Home() {
       </div>
       <div id="writeDiv">
         <button className="close" onClick={closeWrite}>X</button>
-        <textarea className="publicationInput noanimation" placeholder="Enter your message here"></textarea>
+        <textarea className="publicationInput noanimation" id="message" placeholder="Enter your message here"></textarea>
         <button className="send" onClick={sendPublication}>Send message</button>
       </div>
     </div>
