@@ -1,3 +1,5 @@
+import axios from "axios"
+import { useEffect, useState } from "react";
 
 function Timeline() {
 
@@ -10,7 +12,13 @@ function Timeline() {
         { "id": 6, "title": "Publication 6", "content": "La sixième" },
         { "id": 7, "title": "Publication 7", "content": "La septième merveilleurse publication" },
     ];
+    // var [publi, setPubli] = useState([])
+    // useEffect(() => {
+    //     setPubli(axios.get("http://localhost/shareit/publication.php"));
+    // }, []);
     const toutes_les_publis = [];
+
+    console.log(publi);
 
     function moreContent(contenu, id) {
         document.getElementById('content' + id).textContent = contenu;
