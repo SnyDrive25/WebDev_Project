@@ -1,4 +1,35 @@
 import { useNavigate } from 'react-router-dom';
+import {PostData} from "./service/PostData.js"
+class Login extends Component {
+
+
+    constructor(props){
+    super(props); 
+    this.state={
+        username:"",
+        password:""
+    }
+    this.login = this.login.bind(this); 
+    this.onChange = this.onChange.bind(this); 
+    }
+
+    login(){
+        PostData('login, this.state').then((result)=>{
+            let responseJson = result;
+            if(responseJson.userData){
+                sessionStorage.setItem('userDate', responseJson);
+
+            }else{
+                console.log("logini error"); 
+            }  
+
+        });
+    }
+
+    Onchange(e){
+        this.setState({[e.target.name]: e.target.value})
+    }
+}
 
 export default function Login() {
 
@@ -18,7 +49,7 @@ export default function Login() {
                     <br />
                     <label>User Id</label>
                     <br />
-                    <input type="text" name="name" id="name" placeholder="User Id" />
+                    <input type="text" name="name" id="name" placeholder="User Id" onChange={this.onChange} />
                     <br />
                     <label>Password</label>
                     <br />
