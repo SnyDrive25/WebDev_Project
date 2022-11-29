@@ -12,20 +12,20 @@ export default function Register() {
             <h1>Share it</h1>
             <h2>Welcome</h2>
             <div className="container">
-                <form id="postRegister" action="Login">
+                <form id="postRegister" action="Login" method="post">
                     <h3>Register</h3>
                     <br />
                     <label>Mail Adress</label>
                     <br />
-                    <input type="text" name="mail" id="mail" placeholder="Mail adress" />
+                    <input type="text" name="mail" id="mail" placeholder="Mail adress" value="<?php echo $mail?>"/>
                     <br />
                     <label>User Id</label>
                     <br />
-                    <input type="text" name="name" id="name" placeholder="User Id" />
+                    <input type="text" name="name" id="name" placeholder="User Id" value="<?php echo $username?>"/>
                     <br />
                     <label>Password</label>
                     <br />
-                    <input type="password" name="mdp" id="mdp" placeholder="Password" />
+                    <input type="password" name="mdp" id="mdp" placeholder="Password" value="<?php echo $mail?>"/>
                     <br />
                     <br />
                     <button type="submit" name="register" id="register" onClick={routeChange}>Register</button>

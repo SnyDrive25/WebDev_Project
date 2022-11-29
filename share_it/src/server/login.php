@@ -25,3 +25,4 @@
 
     $response[] = array("Message" => $Message);
     print(json_encode($response));
+?> 
