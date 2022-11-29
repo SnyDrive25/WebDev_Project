@@ -1,6 +1,7 @@
 <?php
 
-// $servername="localhost";
+// $servername="https://esilv.olfsoftware.fr";
+// $port=5432;
 // $database="mygrp3";
 // $username="grp3pjhoaw45mr4";
 // $password="7c16YtNhXooP";
@@ -16,6 +17,7 @@ try {
     $dsn="mysql:host=$servername;dbname=$database;charset=$charset";
     $pdo=new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    header("Access-Control-Allow-Origin: http://localhost:3000");
     return $pdo;
 } catch(PDOException $e) {
     echo "Connection failed: ". $e->getMessage();

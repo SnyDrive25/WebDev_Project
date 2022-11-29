@@ -35,11 +35,13 @@ export default function Home() {
     document.getElementById('writeDiv').style.display = "none";
     var msg = document.getElementById('message').value;
     console.log(msg);
+    var user = 1; // CHANGER EN FONCTION DU USER ACTUEL
     $.ajax({
       url: "http://localhost/shareit/add_publication.php",
       method: "POST",
-      data: { "message": msg }
-    })
+      data: { "message": msg, "id_user": user }
+    });
+    window.location.reload(true);
   }
 
   return (
