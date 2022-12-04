@@ -3,6 +3,7 @@ import Timeline from '../../components/timeline/Timeline';
 import Tendances from '../../components/tendances/Tendances';
 import Profilepage from '../../components/profile/Profile';
 import EditProfile from '../../components/editProfile/editProfile';
+import Register from '../register/Register';
 import Messages from '../../components/messages/Messages';
 import $ from 'jquery';
 import swal from '@sweetalert/with-react'
@@ -17,6 +18,9 @@ export default function Home() {
         break;
       case '/editProfile':
         content = <EditProfile></EditProfile>;
+        break;
+      case '/Register':
+        content = <Register></Register>;
         break;
       case '/Messages':
         content = <Messages></Messages>;
