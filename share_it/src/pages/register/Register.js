@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import swal from '@sweetalert/with-react'
 
 export default function Register() {
 
@@ -14,25 +13,13 @@ export default function Register() {
         var mdp = document.getElementById('mdp').value;
         var statut = "";
         if (validateEmail(email) === false) {
-            swal({
-                title: "Wrong email",
-                text: "Your email is not written correctly, please check it again",
-                icon: "error"
-            });
+            alert("Wrong email : Your email is not written correctly, please check it again");
             return false;
         } else if (username.length === 0) {
-            swal({
-                title: "No username",
-                text: "Please enter a username",
-                icon: "error"
-            });
+            alert("No username : Please enter a username");
             return false;
         } else if (mdp.length < 8) {
-            swal({
-                title: "Password failed",
-                text: "Your password needs to have at least 8 characters",
-                icon: "error"
-            });
+            alert("Password failed : Your password needs to have at least 8 characters");
             return false;
         }
         else {
@@ -44,15 +31,10 @@ export default function Register() {
                 method: "POST",
                 data: { "email": email, "username": username, "mdp": mdp, "statut": statut }
             });
-            swal({
-                title: "Registration succeeded",
-                text: "You can now connect yourself",
-                icon: "success"
-            });
             setTimeout(
                 function () {
                     window.location.href = "/Login";
-                }, 2000
+                }, 10
             );
         }
     }
