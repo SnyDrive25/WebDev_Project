@@ -6,7 +6,6 @@ import EditProfile from '../../components/editProfile/editProfile';
 import Register from '../register/Register';
 import Messages from '../../components/messages/Messages';
 import $ from 'jquery';
-import swal from '@sweetalert/with-react'
 
 export default function Home() {
 
@@ -40,18 +39,10 @@ export default function Home() {
     var msg = document.getElementById('message').value;
     var titre = document.getElementById('titre').value;
     if (titre.length > 49) {
-      swal({
-        title: "Character limit exceeded",
-        text: "You are not authorized to insert more than 50 words in your title",
-        icon: "error"
-      });
+      alert("Character limit exceeded : You are not authorized to insert more than 50 words in your title");
       return false;
     } else if (msg.length > 399) {
-      swal({
-        title: "Character limit exceeded",
-        text: "You are not authorized to insert more than 400 words in your message.",
-        icon: "error"
-      });
+      alert("Character limit exceeded : You are not authorized to insert more than 400 words in your message.");
       return false;
     }
     else {
