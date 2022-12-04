@@ -73,17 +73,11 @@ export default function Register() {
                 <form action='return: false'>
                     <h3>Register</h3>
                     <br />
-                    <label>Mail Adress</label>
+                    <input className='regin' type="text" name="mail" id="email" placeholder="Mail adress" />
                     <br />
-                    <input type="text" name="mail" id="email" placeholder="Mail adress" />
+                    <input className='regin' type="text" name="name" id="username" placeholder="Pseudo" />
                     <br />
-                    <label>Pseudo</label>
-                    <br />
-                    <input type="text" name="name" id="username" placeholder="Pseudo" />
-                    <br />
-                    <label>Password</label>
-                    <br />
-                    <input type="password" name="mdp" id="mdp" placeholder="Password" />
+                    <input className='regin' type="password" name="mdp" id="mdp" placeholder="Password" />
                     <br />
                     <br />
                     <button name="login" id="login" onClick={() => goToLogin()}>Login</button>

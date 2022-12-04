@@ -51,11 +51,7 @@ function Timeline() {
 
     return (
         <div className="timeline">
-            <div className="blurup">
-                <h2>Publications</h2>
-            </div>
             {toutes_les_publis}
-            <div className="blurdown"></div>
         </div >
     );
 }
