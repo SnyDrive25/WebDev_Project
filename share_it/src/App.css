@@ -191,6 +191,10 @@ textarea {
   display: block !important;
 }
 
+.logogin {
+  margin-top: 10px !important;
+}
+
 #writeDiv {
   display: none;
   position: fixed;
@@ -199,7 +203,8 @@ textarea {
   box-shadow: 0 0 .9em black;
 }
 
-#writeDiv .close, #writeDiv .send {
+#writeDiv .close,
+#writeDiv .send {
   position: absolute;
   z-index: 9999;
   right: 1em;
@@ -229,15 +234,17 @@ textarea {
   position: relative;
   margin: 0;
   padding: 2%;
-  height: 80%!important;
-  width: 90%!important;
+  height: 80% !important;
+  width: 90% !important;
   margin-left: auto;
   margin-right: auto;
 }
 
-.noanimation, .noanimation:focus, .noanimation:active {
+.noanimation,
+.noanimation:focus,
+.noanimation:active {
   resize: none;
-  animation: none!important;
+  animation: none !important;
   box-shadow: none;
   border: none;
   border-radius: 0px;
@@ -828,6 +835,7 @@ p {
 }
 
 @media only screen and (min-width: 1400px) {
+
   .blurup,
   .blurdown {
     position: fixed;
