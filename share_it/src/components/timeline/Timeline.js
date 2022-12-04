@@ -37,7 +37,7 @@ function Timeline() {
     for (let publicc of answer) {
         toutes_les_publis.push(
             <article>
-                <h1>{publicc.contenu}</h1>
+                <h1>{publicc.titre}</h1>
                 <br></br>
                 <p className="contenu" id={"content" + publicc.id}>{publicc.contenu.slice(0, 100)}</p>
                 <p className="link">
