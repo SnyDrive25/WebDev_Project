@@ -5,6 +5,7 @@ import Profilepage from '../../components/profile/Profile';
 import EditProfile from '../../components/editProfile/editProfile';
 import Messages from '../../components/messages/Messages';
 import $ from 'jquery';
+import swal from '@sweetalert/with-react'
 
 export default function Home() {
 
@@ -32,16 +33,39 @@ export default function Home() {
   }
 
   function sendPublication() {
-    document.getElementById('writeDiv').style.display = "none";
     var msg = document.getElementById('message').value;
-    console.log(msg);
-    var user = 1; // CHANGER EN FONCTION DU USER ACTUEL
-    $.ajax({
-      url: "http://localhost/shareit/add_publication.php",
-      method: "POST",
-      data: { "message": msg, "id_user": user }
-    });
-    window.location.reload(true);
+    var titre = document.getElementById('titre').value;
+    if (titre.length > 49) {
+      swal({
+        title: "Character limit exceeded",
+        text: "You are not authorized to insert more than 50 words in your title",
+        icon: "error"
+      });
+      return false;
+    } else if (msg.length > 399) {
+      swal({
+        title: "Character limit exceeded",
+        text: "You are not authorized to insert more than 400 words in your message.",
+        icon: "error"
+      });
+      return false;
+    }
+    else {
+      var pad = function (num) { return ('00' + num).slice(-2) };
+      var date;
+      date = new Date();
+      date = date.getUTCFullYear() + '-' +
+        pad(date.getUTCMonth() + 1) + '-' +
+        pad(date.getUTCDate());
+      var id_user = 0; // CHANGER EN FONCTION DU USER ACTUEL
+      $.ajax({
+        url: "http://localhost/shareit/add_publication.php",
+        method: "POST",
+        data: { "message": msg, "id_user": id_user, "titre": titre, "date": date }
+      });
+      document.getElementById('writeDiv').style.display = "none";
+      window.location.reload(true);
+    }
   }
 
   return (
@@ -59,8 +83,9 @@ export default function Home() {
       </div>
       <div id="writeDiv">
         <button className="close" onClick={closeWrite}>X</button>
+        <input placeholder='Titre de la publication' className='titre_pub' id="titre"></input>
         <textarea className="publicationInput noanimation" id="message" placeholder="Enter your message here"></textarea>
-        <button className="send" onClick={sendPublication}>Send message</button>
+        <button className="send" onClick={() => sendPublication()}>Send message</button>
       </div>
     </div>
   );

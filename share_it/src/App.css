@@ -187,6 +187,15 @@ textarea {
   }
 }
 
+.titre_pub {
+  height: max-content !important;
+  animation: none !important;
+  margin: 9px;
+  width: 350px;
+  float: left;
+  margin-left: 5%;
+}
+
 .block {
   display: block !important;
 }

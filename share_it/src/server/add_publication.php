@@ -3,8 +3,10 @@
 require "./server.php";
 
 $msg = $_POST["message"];
+$titre = $_POST["titre"];
 $id_user = $_POST["id_user"];
+$date = $_POST["date"];
 
-$query = $pdo->exec("INSERT INTO publication (id, contenu, id_user, date_m) VALUES (6, " . $pdo->quote($msg) . ", " . $pdo->quote($id_user) . ", '2022-11-28')");
+$query = $pdo->exec("INSERT INTO publication(titre, contenu, id_user, date_m) VALUES (" . $pdo->quote($titre) . ", " . $pdo->quote($msg) . ", $id_user, " . $pdo->quote($date) . ")");
 
 ?>
