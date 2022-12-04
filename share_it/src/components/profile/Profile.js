@@ -110,14 +110,16 @@ function Profilepage() {
                 </p>
             </div>
 
-            <div className="flex navProfile">
-                <div><a onClick={() => setPage('shares')} href="/Profile">My shares</a></div>
-                <div><a onClick={() => setPage('reshares')} href="/Profile">ReShares</a></div>
-                <div><a onClick={() => setPage('liked')} href="/Profile">Shares liked</a></div>
-            </div>
+            <div className="profilebox">
+                <div className="flex navProfile">
+                    <div><a onClick={() => setPage('shares')} href="/Profile">My shares</a></div>
+                    <div><a onClick={() => setPage('reshares')} href="/Profile">ReShares</a></div>
+                    <div><a onClick={() => setPage('liked')} href="/Profile">Shares liked</a></div>
+                </div>
 
-            <div className="profileContent">
-                {goToPage()}
+                <div className="profileContent">
+                    {goToPage()}
+                </div>
             </div>
         </div>
     )

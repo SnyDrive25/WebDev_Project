@@ -1,69 +1,39 @@
-import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
-import { PostData } from '../../services/services';
+import React from 'react';
 
-class Login extends Component {
+export default function Login() {
 
-    constructor() {
-        super();
-
-        this.state = {
-            username: '',
-            password: '',
-            redirectToReferrer: false
-        };
-
-        this.login = this.login.bind(this);
-        this.onChange = this.onChange.bind(this);
-    }
-
-    login() {
-        if (this.state.username && this.state.password) {
-            PostData('login', this.state).then((result) => {
-                let responseJson = result;
-                if (responseJson.userData) {
-                    sessionStorage.setItem('userData', JSON.stringify(responseJson));
-                    this.setState({ redirectToReferrer: true });
-                }
-            });
-        }
-    }
-
-    onChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
-    }
-
-    render() {
-        if (this.state.redirectToReferrer) {
-            return (<Navigate to={'Home'} />)
-        }
-        if (sessionStorage.getItem('userData')) {
-            return (<Navigate to={'Home'} />)
-        }
-        return (
-            <div className="loginPage">
-                <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
-                <h2>Welcome</h2>
-                <div className="container">
-                    <form id="postLogin" action="Home" method="GET">
-                        <h3>Login</h3>
-                        <br />
-                        <label>User Id</label>
-                        <br />
-                        <input type="text" name="name" id="name" placeholder="User Id" onChange={this.onChange} />
-                        <br />
-                        <label>Password</label>
-                        <br />
-                        <input type="password" name="mdp" id="mdp" placeholder="Password" onChange={this.onChange} />
-                        <br />
-                        <br />
-                        <button type="submit" id="login" onClick={this.login}>Login</button>
-                        <button name="register" id="register" onClick={<Navigate to={'Register'} />}>Register</button>
-                    </form>
-                </div>
-            </div>
+    function verifyLogin() {
+        setTimeout(
+            function () {
+                window.location.href = "/Home";
+            }, 10
         );
     }
-}
 
-export default Login;
+    function goToRegister() {
+        setTimeout(
+            function () {
+                window.location.href = "/Register";
+            }, 10
+        );
+    }
+
+    return (
+        <div className="loginPage">
+            <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
+            <div className="container">
+                <form action="return: false">
+                    <h3>Login</h3>
+                    <br />
+                    <input className='regin' type="text" name="username" id="username" placeholder="Pseudo" />
+                    <br />
+                    <input className='regin' type="password" name="mdp" id="mdp" placeholder="Password" />
+                    <br />
+                    <br />
+                    <button name="login" id="login" onClick={() => verifyLogin()}>Login</button>
+                    <button id="register" onClick={() => goToRegister()}>Register</button>
+                </form>
+            </div>
+        </div>
+    );
+}

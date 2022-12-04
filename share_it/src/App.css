@@ -64,7 +64,11 @@ textarea {
 }
 
 .App {
-  background-color: var(--bleu-light);
+  background: url("https://nucleusfinance.com/img/grid1.webp");
+  background-size: cover;
+  background-position: center;
+  background-position-y: bottom;
+  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -261,68 +265,48 @@ textarea {
 
 /* FIN Home */
 
-/* DEBUT Login */
+/* DEBUT Register & Login */
 
-.loginPage {
-  text-align: center;
-  background-color: var(--bleu-light);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--bleu-dark);
+@media only screen and (max-width: 1399px) {
+  .container {
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 50px;
+    padding: 3% 5% 3% 5%;
+    border-radius: 0px;
+  }
+
+  #login,
+  #register {
+    border-radius: 9px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 4px;
+  }
 }
 
-.container {
-  width: fit-content;
-  margin: auto;
-  padding: 3% 5% 3% 5%;
-  border: 5px solid var(--main-dark);
-  border-radius: 25px;
-  background-color: var(--bleu-dark);
-  box-shadow: .2em .2em .5em var(--bleu-dark);
+@media only screen and (min-width: 1400px) {
+  .container {
+    width: fit-content;
+    margin: auto;
+    padding: 3% 5% 3% 5%;
+    border-radius: 25px;
+  }
+
+  #login,
+  #register {
+    border-radius: 25px;
+    margin: 0 2px 0 2px;
+    padding: 3% 7% 3% 7%;
+  }
 }
 
-label {
-  color: var(--bleu-light);
-}
-
-#login,
-#register {
-  width: 100px;
-  border-radius: 25px;
-  margin: 0 2px 0 2px;
-  padding: 3% 7% 3% 7%;
-  font-size: 17px;
-  border: 2px solid var(--main-light);
-}
-
-#login {
-  color: var(--main-dark);
-  background-color: var(--main-light);
-  box-shadow: .2em .2em .5em var(--bleu-dark);
-}
-
-#register {
-  color: var(--main-light);
-  background-color: var(--blue-dark);
-  box-shadow: .2em .2em .5em var(--bleu-dark);
-}
-
-#login:hover,
-#register:hover {
-  cursor: pointer;
-}
-
-
-/* FIN Login */
-
-/* DEBUT Register */
-
+.loginPage,
 .registerPage {
   text-align: center;
-  background-color: var(--bleu-light);
+  background: url("https://free4kwallpapers.com/uploads/originals/2020/10/25/colourful-light-refraction-wallpaper.jpg");
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -332,12 +316,9 @@ label {
 }
 
 .container {
-  width: fit-content;
-  margin: auto;
-  padding: 3% 5% 3% 5%;
-  border: 5px solid var(--main-dark);
-  border-radius: 25px;
-  background-color: var(--bleu-dark);
+  border: none;
+  background-color: transparent;
+  backdrop-filter: blur(2em);
   box-shadow: .2em .2em .5em var(--bleu-dark);
 }
 
@@ -348,23 +329,23 @@ label {
 #login,
 #register {
   width: 100px;
-  border-radius: 25px;
-  margin: 0 2px 0 2px;
-  padding: 3% 7% 3% 7%;
   font-size: 17px;
-  border: 2px solid var(--main-light);
+  text-align: center;
+  border: none;
 }
 
 #login {
   color: var(--main-dark);
   background-color: var(--main-light);
   box-shadow: .2em .2em .5em var(--bleu-dark);
+  outline: none;
 }
 
 #register {
   color: var(--main-light);
   background-color: var(--blue-dark);
   box-shadow: .2em .2em .5em var(--bleu-dark);
+  outline: none;
 }
 
 #login:hover,
@@ -372,8 +353,26 @@ label {
   cursor: pointer;
 }
 
+#login:focus,
+#register:focus {
+  transform: scale(.9);
+  box-shadow: .05em .05em .1em var(--bleu-dark);
+}
 
-/* FIN Login */
+.regin {
+  border: none !important;
+  background-color: rgb(144, 175, 239, .4) !important;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  padding: 11px;
+  transition: all.4s;
+}
+
+.regin:focus {
+  background-color: rgb(144, 175, 239, .9) !important;
+}
+
+/* FIN Register & Login */
 
 /* DEBUT Messages */
 
@@ -384,6 +383,11 @@ label {
   margin-right: auto;
   width: 100%;
   height: 100%;
+  background: url("https://nucleusfinance.com/img/grid1.webp");
+  background-size: cover;
+  background-position: center;
+  background-position-y: bottom;
+  background-attachment: fixed;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
@@ -432,11 +436,6 @@ label {
     padding: 1em;
   }
 
-  .mode {
-    top: 1vw;
-    left: 1vw;
-  }
-
   p {
     text-align: center;
   }
@@ -444,7 +443,8 @@ label {
   #logo {
     height: 50px;
     width: auto;
-    margin-top: 10px;
+    float: center;
+    margin-top: -50px !important;
     pointer-events: none;
     filter: invert(1);
     transition: all.4s;
@@ -459,11 +459,6 @@ label {
     width: 100%;
     padding: 1em;
     padding-top: 25vh;
-  }
-
-  .mode {
-    bottom: 1vw;
-    right: 1vw;
   }
 
   p {
@@ -552,29 +547,12 @@ p {
 }
 
 #logo {
-  height: 200px;
+  height: 300px;
   width: auto;
-  float: right;
   pointer-events: none;
   margin-top: -200px;
-  filter: invert(1);
+  filter: invert(1) drop-shadow(0 0 .4rem var(--main-light));
   transition: all.4s;
-}
-
-.mode {
-  position: absolute;
-  z-index: 100;
-  background-color: transparent;
-  border-radius: 50px;
-  border: none;
-  outline: none;
-  color: var(--bleu-dark);
-  font-size: 2em;
-  transition: all.4s;
-}
-
-.mode:hover {
-  cursor: pointer;
 }
 
 /* FIN Navbar */
@@ -587,13 +565,13 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 96%;
-  height: auto;
-  max-height: 99%;
+  height: calc(99%-2px);
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
   display: block;
-  background-color: var(--main-light);
+  background-color: transparent;
+  backdrop-filter: blur(2em);
   transition: all.4s;
 }
 
@@ -643,7 +621,7 @@ p {
   margin: 5%;
   color: var(--bleu-dark);
   border: none;
-  background-color: var(--main-light);
+  background-color: transparent;
   text-align: left;
 }
 
@@ -714,7 +692,7 @@ p {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  border-bottom: 4px solid var(--bleu-light);
+  border-bottom: 2px solid rgb(5, 5, 25, .1);
 }
 
 .navProfile div {
@@ -735,7 +713,7 @@ p {
 
 .navProfile div:hover {
   cursor: pointer;
-  background-color: var(--bleu-light);
+  background-color: rgb(5, 5, 25, .1);
 }
 
 .username {
@@ -758,16 +736,32 @@ p {
 
 .profileContent {
   display: block;
-  width: 90%;
+  width: calc(90% - 8px);
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--bleu-light);
+  background-color: transparent;
   height: fit-content;
   min-height: 250px;
 }
 
+.profileContent article {
+  border-radius: 0px;
+  box-shadow: none;
+  backdrop-filter: none;
+  background-color: rgb(5, 5, 25, .1);
+}
+
 .historyProfileDiv {
   padding: 1%;
+}
+
+.profilebox {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  box-shadow: 0 0 .4em var(--main-dark);
 }
 
 /* FIN Profile */
@@ -781,9 +775,15 @@ p {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--bleu-light);
+  background: url("https://nucleusfinance.com/img/grid1.webp");
+  background-color: #717bd5;
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  background-position-y: bottom;
+  background-attachment: fixed;
   border-radius: 25px;
-  box-shadow: 0 0 .7em black;
+  box-shadow: inset 0 0 .7em black;
   transition: all.4s;
 }
 
@@ -805,7 +805,8 @@ p {
   height: fit-content;
   min-height: 75px;
   border-radius: 10px;
-  background-color: var(--main-light);
+  background-color: transparent;
+  backdrop-filter: blur(2em);
   transition: all.4s;
 }
 
@@ -839,6 +840,13 @@ p {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  background: url("https://nucleusfinance.com/img/grid1.webp");
+  background-color: #717bd5;
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  background-position-y: bottom;
+  background-attachment: fixed;
   scrollbar-width: none;
   transition: all.4s;
 }
@@ -858,7 +866,6 @@ p {
     top: 0;
     height: 5vh;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 .4em black;
   }
 
   .blurdown {
@@ -867,10 +874,6 @@ p {
     background: linear-gradient(transparent 0%, var(--main-light) 90%);
   }
 
-  .timeline {
-    padding-top: 5vh;
-    height: calc(100% - 5vh);
-  }
 }
 
 article {
@@ -882,18 +885,25 @@ article {
   padding: 9px;
   width: 95%;
   height: fit-content;
-  background-color: var(--main-light);
+  background-color: transparent;
+  backdrop-filter: blur(2em);
+  box-shadow: 0 0 2em var(--main-light);
+  border-radius: 25px;
   min-height: 100px;
   padding-bottom: 6em;
-  border-left: 1px solid var(--bleu-dark);
   transition: all.4s;
 }
 
 article h1 {
   color: var(--bleu-dark);
   font-size: 1.5em;
+  text-transform: uppercase;
   float: left;
-  opacity: .5;
+}
+
+article textarea {
+  background-color: transparent;
+  text-transform: capitalize;
 }
 
 .comment {
