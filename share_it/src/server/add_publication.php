@@ -2,11 +2,11 @@
 
 require "./server.php";
 
-$msg = $_POST["message"];
+$msg = $_POST["msg"];
 $titre = $_POST["titre"];
-$id_user = $_POST["id_user"];
+$email = $_POST["email"];
 $date = $_POST["date"];
 
-$query = $pdo->exec("INSERT INTO publication(titre, contenu, id_user, date_m) VALUES (" . $pdo->quote($titre) . ", " . $pdo->quote($msg) . ", $id_user, " . $pdo->quote($date) . ")");
+$query = $pdo->exec("INSERT INTO publication(titre, contenu, email, date_m) VALUES (" . $pdo->quote($titre) . ", " . $pdo->quote($msg) . ", " . $pdo->quote($email) . ", " . $pdo->quote($date) . ")");
 
 ?>

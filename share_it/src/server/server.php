@@ -12,6 +12,12 @@ $charset="utf8mb4";
 // $password="shareit";
 // $charset="utf8mb4";
 
+// session_start();
+
+// var_dump($_SESSION);
+
+// $_SESSION[] = isset($_GET[])?$_GET[]:"pas d'utilisateur";
+
 try {
     $dsn="mysql:host=$servername;dbname=$database;charset=$charset";
     $pdo=new PDO($dsn, $username, $password);

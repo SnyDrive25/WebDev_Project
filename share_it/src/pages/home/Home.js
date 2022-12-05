@@ -52,14 +52,15 @@ export default function Home() {
       date = date.getUTCFullYear() + '-' +
         pad(date.getUTCMonth() + 1) + '-' +
         pad(date.getUTCDate());
-      var id_user = 0; // CHANGER EN FONCTION DU USER ACTUEL
+      var email = "one@piece.com";
+      console.log(titre, msg, date, email);
       $.ajax({
-        url: "http://localhost/shareit/add_publication.php",
+        url: "http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_publication.php",
         method: "POST",
-        data: { "message": msg, "id_user": id_user, "titre": titre, "date": date }
+        data: { "msg": msg, "email": email, "titre": titre, "date": date }
       });
       document.getElementById('writeDiv').style.display = "none";
-      window.location.reload(true);
+      //window.location.reload(true);
     }
   }
 
