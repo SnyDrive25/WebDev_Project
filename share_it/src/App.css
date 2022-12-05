@@ -113,7 +113,7 @@ textarea {
 
 /* DEBUT Home */
 
-@media only screen and (max-width: 1499px) {
+@media only screen and (max-width: 1500px) {
 
   .part20 .part60 {
     padding: 1em;
@@ -267,7 +267,7 @@ textarea {
 
 /* DEBUT Register & Login */
 
-@media only screen and (max-width: 1499px) {
+@media only screen and (max-width: 1500px) {
   .container {
     width: 90vw;
     height: 80vh;
@@ -428,7 +428,7 @@ label {
 
 /* DEBUT Navbar */
 
-@media only screen and (max-width: 1499px) {
+@media only screen and (max-width: 1500px) {
 
   .navbar {
     position: relative;
@@ -942,18 +942,53 @@ article textarea {
   transition: all.4s;
 }
 
+.block-link,
 .link {
-  color: var(--bleu-dark);
-  text-decoration: underline;
+  color: var(--main-light);
   border: none;
   padding: 0;
   margin: 0;
   font-size: 1em;
   outline: none;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 1em;
   transition: all.4s;
 }
+
+.block-link {
+  width: 100%;
+  display: inline-flex;
+}
+
+.link {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 30%;
+  min-width: 150px;
+}
+
+.link:first-child {
+  background-color: transparent;
+  border: .2em solid rgb(0, 75, 0, .2);
+}
+
+.link:first-child:hover {
+  background-color: rgb(0, 150, 0, .7);
+  border: .2em solid transparent;
+}
+
+.link:last-child {
+  background-color: transparent;
+  border: .2em solid rgb(75, 0, 0, .2);
+}
+
+.link:last-child:hover {
+  background-color: rgb(150, 0, 0, .7);
+  border: .2em solid transparent;
+}
+
 
 .link:hover {
   cursor: pointer;

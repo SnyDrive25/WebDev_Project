@@ -1,12 +1,30 @@
 import React from 'react';
+import $ from 'jquery';
 
 export default function Login() {
 
-    function verifyLogin() {
+    const VerifyLogin = async () => {
+
+        var user = document.getElementById("username");
+        var mdp = document.getElementById("mdp");
+        if (user === '' || mdp === '') {
+            alert("Please fill out all fields");
+        }
+        $.ajax({
+            url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php",
+            method: "POST",
+            data: { "user": user, "mdp": mdp }
+        });
+
+        await fetch("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php")
+            .then(function (data) {
+                console.log(data);
+            });
+
         setTimeout(
             function () {
                 window.location.href = "/Home";
-            }, 10
+            }, 100000
         );
     }
 
@@ -20,19 +38,17 @@ export default function Login() {
 
     return (
         <div className="loginPage">
-            <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
+            <img src="https://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
             <div className="container">
-                <form action="return: false">
-                    <h3>Login</h3>
-                    <br />
-                    <input className='regin' type="text" name="username" id="username" placeholder="Pseudo" />
-                    <br />
-                    <input className='regin' type="password" name="mdp" id="mdp" placeholder="Password" />
-                    <br />
-                    <br />
-                    <button name="login" id="login" onClick={() => verifyLogin()}>Login</button>
-                    <button id="register" onClick={() => goToRegister()}>Register</button>
-                </form>
+                <h3>Login</h3>
+                <br />
+                <input className='regin' type="text" id="username" placeholder="Pseudo" />
+                <br />
+                <input className='regin' type="password" id="mdp" placeholder="Password" />
+                <br />
+                <br />
+                <button name="login" id="login" onClick={() => VerifyLogin()}>Login</button>
+                <button id="register" onClick={() => goToRegister()}>Register</button>
             </div>
         </div>
     );

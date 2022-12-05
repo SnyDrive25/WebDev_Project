@@ -38,13 +38,13 @@ function Timeline() {
         toutes_les_publis.push(
             <article>
                 <h1>{publicc.titre}</h1>
-                <a className='pubinfo pubuser'>{publicc.email}</a>
-                <a className='pubinfo pubdate'>{publicc.date_m}</a>
+                <a className='pubinfo pubuser' href={"mailto:" + publicc.email}>{publicc.email}</a>
+                <a className='pubinfo pubdate' href="/">{publicc.date_m}</a>
                 <br></br>
                 <p className="contenu" id={"content" + publicc.id}>{publicc.contenu.slice(0, 100)}</p>
-                <p className="link">
-                    <button onClick={() => moreContent(publicc.contenu, publicc.id)} className="link">[See more]</button>
-                    <button onClick={() => lessContent(publicc.contenu, publicc.id)} className="link">[See less]</button>
+                <p className="block-link">
+                    <button onClick={() => moreContent(publicc.contenu, publicc.id)} className="link">See more</button>
+                    <button onClick={() => lessContent(publicc.contenu, publicc.id)} className="link">See less</button>
                 </p>
                 <textarea type="text" className="comment" placeholder='Write a comment'></textarea>
             </article >
