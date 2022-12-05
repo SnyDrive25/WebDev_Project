@@ -8,7 +8,7 @@ export default function Register() {
     }
 
     function setUser() {
-        var email = document.getElementById('email').value;
+        var email = document.getElementById("email").value;
         var username = document.getElementById('username').value;
         var mdp = document.getElementById('mdp').value;
         var statut = "";
@@ -27,14 +27,14 @@ export default function Register() {
             console.log(username);
             console.log(mdp);
             $.ajax({
-                url: "http://localhost/shareit/add_user.php",
+                url: "http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_user.php",
                 method: "POST",
                 data: { "email": email, "username": username, "mdp": mdp, "statut": statut }
             });
             setTimeout(
                 function () {
                     window.location.href = "/Login";
-                }, 10
+                }, 100000
             );
         }
     }
@@ -52,19 +52,17 @@ export default function Register() {
             <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
             <h2>Welcome</h2>
             <div className="container">
-                <form action='return: false'>
-                    <h3>Register</h3>
-                    <br />
-                    <input className='regin' type="text" name="mail" id="email" placeholder="Mail adress" />
-                    <br />
-                    <input className='regin' type="text" name="name" id="username" placeholder="Pseudo" />
-                    <br />
-                    <input className='regin' type="password" name="mdp" id="mdp" placeholder="Password" />
-                    <br />
-                    <br />
-                    <button name="login" id="login" onClick={() => goToLogin()}>Login</button>
-                    <button name="register" id="register" onClick={() => setUser()}>Register</button>
-                </form>
+                <h3>Register</h3>
+                <br />
+                <input className='regin' type="text" id="email" placeholder="Mail address" />
+                <br />
+                <input className='regin' type="text" id="username" placeholder="Pseudo" />
+                <br />
+                <input className='regin' type="password" id="mdp" placeholder="Password" />
+                <br />
+                <br />
+                <button name="login" id="login" onClick={() => goToLogin()}>Login</button>
+                <button name="register" id="register" onClick={() => setUser()}>Register</button>
             </div>
         </div>
     );
