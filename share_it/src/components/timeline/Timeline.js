@@ -16,7 +16,7 @@ function Timeline() {
     const [answer, setAnwser] = useState([]);
 
     const getAnswer = async () => {
-        const res = await axios.get("http://localhost/shareit/publication.php");
+        const res = await axios.get("http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php");
         setAnwser(res.data);
     };
 
@@ -38,6 +38,8 @@ function Timeline() {
         toutes_les_publis.push(
             <article>
                 <h1>{publicc.titre}</h1>
+                <a className='pubinfo pubuser'>{publicc.email}</a>
+                <a className='pubinfo pubdate'>{publicc.date_m}</a>
                 <br></br>
                 <p className="contenu" id={"content" + publicc.id}>{publicc.contenu.slice(0, 100)}</p>
                 <p className="link">

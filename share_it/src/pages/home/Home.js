@@ -51,8 +51,11 @@ export default function Home() {
       date = new Date();
       date = date.getUTCFullYear() + '-' +
         pad(date.getUTCMonth() + 1) + '-' +
-        pad(date.getUTCDate());
-      var email = "one@piece.com";
+        pad(date.getUTCDate()) + " " +
+        pad(date.getUTCHours()) + ":" +
+        pad(date.getUTCMinutes()) + ":" +
+        pad(date.getUTCSeconds());
+      var email = "second@piece.com";
       console.log(titre, msg, date, email);
       $.ajax({
         url: "http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_publication.php",
@@ -60,7 +63,7 @@ export default function Home() {
         data: { "msg": msg, "email": email, "titre": titre, "date": date }
       });
       document.getElementById('writeDiv').style.display = "none";
-      //window.location.reload(true);
+      window.location.reload(true);
     }
   }
 
@@ -79,8 +82,8 @@ export default function Home() {
       </div>
       <div id="writeDiv">
         <button className="close" onClick={closeWrite}>X</button>
-        <input placeholder='Titre de la publication' className='titre_pub' id="titre"></input>
-        <textarea className="publicationInput noanimation" id="message" placeholder="Enter your message here"></textarea>
+        <input placeholder='Titre de la publication' className='titre_pub' id="titre"></input><span id="reste_titre"></span>
+        <textarea className="publicationInput noanimation" id="message" placeholder="Enter your message here"></textarea><span id="reste_message"></span>
         <button className="send" onClick={() => sendPublication()}>Send message</button>
       </div>
     </div>
