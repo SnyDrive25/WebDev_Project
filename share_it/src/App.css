@@ -77,7 +77,7 @@ textarea {
   transition: all.4s;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1500px) {
   .App {
     display: flex;
   }
@@ -113,7 +113,7 @@ textarea {
 
 /* DEBUT Home */
 
-@media only screen and (max-width: 1399px) {
+@media only screen and (max-width: 1499px) {
 
   .part20 .part60 {
     padding: 1em;
@@ -144,7 +144,7 @@ textarea {
   }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1500px) {
   .part20 .part60 {
     padding: 1em;
     min-height: 70vh;
@@ -267,7 +267,7 @@ textarea {
 
 /* DEBUT Register & Login */
 
-@media only screen and (max-width: 1399px) {
+@media only screen and (max-width: 1499px) {
   .container {
     width: 90vw;
     height: 80vh;
@@ -286,7 +286,7 @@ textarea {
   }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1500px) {
   .container {
     width: fit-content;
     margin: auto;
@@ -428,7 +428,7 @@ label {
 
 /* DEBUT Navbar */
 
-@media only screen and (max-width: 1399px) {
+@media only screen and (max-width: 1499px) {
 
   .navbar {
     position: relative;
@@ -452,13 +452,13 @@ label {
 
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1500px) {
 
   .navbar {
     position: relative;
     width: 100%;
     padding: 1em;
-    padding-top: 25vh;
+    padding-top: 17vh;
   }
 
   p {
@@ -851,7 +851,7 @@ p {
   transition: all.4s;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1500px) {
 
   .blurup,
   .blurdown {
