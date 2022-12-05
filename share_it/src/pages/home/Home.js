@@ -58,7 +58,7 @@ export default function Home() {
       var email = "second@piece.com";
       console.log(titre, msg, date, email);
       $.ajax({
-        url: "http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_publication.php",
+        url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_publication.php",
         method: "POST",
         data: { "msg": msg, "email": email, "titre": titre, "date": date }
       });

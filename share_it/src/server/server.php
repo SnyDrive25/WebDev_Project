@@ -23,7 +23,7 @@ try {
     $pdo=new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     header("Access-Control-Allow-Origin: *");
-    return $pdo;
+    //return $pdo;
 } catch(PDOException $e) {
     echo "Connection failed: ". $e->getMessage();
 }

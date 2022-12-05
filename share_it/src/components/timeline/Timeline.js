@@ -16,7 +16,7 @@ function Timeline() {
     const [answer, setAnwser] = useState([]);
 
     const getAnswer = async () => {
-        const res = await axios.get("http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php");
+        const res = await axios.get("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php");
         setAnwser(res.data);
     };
 
