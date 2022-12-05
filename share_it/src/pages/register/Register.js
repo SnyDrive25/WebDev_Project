@@ -27,7 +27,7 @@ export default function Register() {
             console.log(username);
             console.log(mdp);
             $.ajax({
-                url: "http://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_user.php",
+                url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_user.php",
                 method: "POST",
                 data: { "email": email, "username": username, "mdp": mdp, "statut": statut }
             });
@@ -49,7 +49,7 @@ export default function Register() {
 
     return (
         <div className="registerPage">
-            <img src="http://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
+            <img src="https://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
             <h2>Welcome</h2>
             <div className="container">
                 <h3>Register</h3>
