@@ -1,26 +1,26 @@
 <?php
 
-    session_start();
+    // session_start();
 
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
 
     //$_SESSION[] = isset($_GET[])?$_GET[]:"pas d'utilisateur";
-    $UserEmail = $decodedData['Email'];
-    $UserPW = ($decodedData['Password']); //password is hashed
+    
+    $User = $_POST["user"];
+    $UserPW = $_POST["mdp"]; //password is hashed
 
-    $SQL = "SELECT * FROM newuser WHERE UserEmail = '$UserEmail'";
-    $exeSQL = mysqli_query($conn, $SQL);
-    $checkEmail =  mysqli_num_rows($exeSQL);
+    $SQL = "SELECT * FROM users WHERE username = '$User'";
+    $query = $pdo->exec("SELECT mdp FROM users WHERE username = '$User'");
+    $valid = $pdo->exec("SELECT COUNT(mdp) FROM users WHERE username = '$User'");
 
-    if ($checkEmail != 0) {
-        $arrayu = mysqli_fetch_array($exeSQL);
-        if ($arrayu['UserPw'] != $UserPW) {
-            $Message = "pw WRONG";
+    if ($valid != 0) {
+        if ($query != $UserPW) {
+            $Message = "Wrong password";
         } else {
             $Message = "Success";
         }
     } else {
-        $Message = "No account yet";
+        $Message = "No account connected";
     }
 
     $response[] = array("Message" => $Message);

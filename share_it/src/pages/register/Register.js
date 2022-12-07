@@ -23,9 +23,6 @@ export default function Register() {
             return false;
         }
         else {
-            console.log(email);
-            console.log(username);
-            console.log(mdp);
             $.ajax({
                 url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_user.php",
                 method: "POST",
@@ -34,7 +31,7 @@ export default function Register() {
             setTimeout(
                 function () {
                     window.location.href = "/Login";
-                }, 100000
+                }, 10
             );
         }
     }
