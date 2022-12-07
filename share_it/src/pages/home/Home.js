@@ -5,6 +5,7 @@ import Profilepage from '../../components/profile/Profile';
 import EditProfile from '../../components/editProfile/editProfile';
 import Register from '../register/Register';
 import Messages from '../../components/messages/Messages';
+import PrivateMessage from '../../components/PrivateMessage/PrivateMessage';
 import $ from 'jquery';
 
 export default function Home() {
@@ -23,6 +24,9 @@ export default function Home() {
         break;
       case '/Messages':
         content = <Messages></Messages>;
+        break;
+      case '/PrivateMessage':
+        content = <PrivateMessage></PrivateMessage>;
         break;
       default:
         content = <Timeline></Timeline>;

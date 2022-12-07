@@ -382,7 +382,7 @@ label {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("https://nucleusfinance.com/img/grid1.webp");
   background-size: cover;
   background-position: center;
@@ -400,18 +400,22 @@ label {
   padding: 1%;
   width: 90%;
   height: auto;
-  background-color: var(--main-light);
+  backdrop-filter: blur(2em);
+  background-color: rgb(0, 0, 0, .1);
+  border-radius: 17px;
   margin-bottom: 15px;
   margin-top: 15px;
-  border-left: 1px solid var(--bleu-dark);
+  transition: all.4s;
+}
+
+.msg-title span {
+  color: var(--main-dark);
   transition: all.4s;
 }
 
 .msg-title:hover {
-  background-color: var(--bleu-dark);
-  opacity: .4;
+  background-color: rgb(0, 0, 0, .4);
   cursor: pointer;
-  animation: smooth .7s;
 }
 
 .msg-title p {
@@ -420,8 +424,95 @@ label {
   font-size: 1.5em;
 }
 
-.msg-title:hover p {
+.msg-title:hover p,
+.msg-title:hover span {
   color: var(--bleu-light);
+}
+
+.sendMessage {
+  position: static;
+  margin: 50px;
+  padding: 0px;
+  padding-left: 17px;
+  padding-right: 17px;
+  font-size: 1.2em;
+  color: var(--main-light);
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10px;
+  width: 350px;
+  height: 50px;
+  float: bottom;
+  background-color: rgb(0, 0, 0, .4);
+  border: .2em solid var(--main-light);
+  border-radius: 25px;
+  backdrop-filter: blur(1em);
+}
+
+.large {
+  outline: none;
+  border: none;
+  animation: none !important;
+  width: 95% !important;
+  color: var(--main-dark);
+  background-color: rgb(255, 255, 255, .4);
+}
+
+.private {
+  width: 90%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(0, 0, 0, .1);
+  backdrop-filter: blur(2em);
+}
+
+.private-title {
+  position: sticky;
+  display: inline-flex;
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  vertical-align: middle;
+  border-bottom: .1em solid var(--main-light);
+}
+
+.private-title a {
+  font-size: 1.2em;
+  margin: calc(25px - 0.6em);
+  user-select: none;
+}
+
+.private-title a:hover {
+  cursor: pointer;
+}
+
+.bubble {
+  width: 95%;
+  height: max-content;
+  min-height: 1.5em;
+  padding: 9px;
+  margin: 9px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9px;
+  display: flex;
+  text-align: left;
+  background-color: var(--bleu-light);
+}
+
+.bubble .msg {
+  float: left;
+  width: 80%;
+}
+
+.bubble .date {
+  float: right;
+  width: 20%;
+}
+
+.bubble .date code {
+  opacity: .4;
 }
 
 /* FIN Messages */
@@ -864,6 +955,7 @@ p {
 }
 
 .pubdate {
+  user-select: none;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   border: .2em solid transparent;
 }

@@ -39,7 +39,7 @@ function Timeline() {
             <article>
                 <h1>{publicc.titre}</h1>
                 <a className='pubinfo pubuser' href={"mailto:" + publicc.email}>{publicc.email}</a>
-                <a className='pubinfo pubdate' href="/">{publicc.date_m}</a>
+                <span className='pubinfo pubdate'>{publicc.date_m}</span>
                 <br></br>
                 <p className="contenu" id={"content" + publicc.id}>{publicc.contenu.slice(0, 100)}</p>
                 <p className="block-link">
