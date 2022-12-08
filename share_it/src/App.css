@@ -880,6 +880,18 @@ p {
 
 /* DEBUT Tendances */
 
+@media only screen and (max-width: 1500px) {
+  .tendances {
+    background-attachment: scroll;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .tendances {
+    background-attachment: fixed;
+  }
+}
+
 .tendances {
   margin: 4%;
   float: left;
@@ -893,7 +905,6 @@ p {
   background-size: cover;
   background-position: center;
   background-position-y: bottom;
-  background-attachment: fixed;
   border-radius: 25px;
   box-shadow: inset 0 0 .7em black;
   transition: all.4s;
