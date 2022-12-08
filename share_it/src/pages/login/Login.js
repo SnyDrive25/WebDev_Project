@@ -3,35 +3,41 @@ import $ from 'jquery';
 
 export default function Login() {
 
-    const VerifyLogin = async () => {
+    $.ajax({
+        url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php",
+        method: "POST",
+        data: { "user": "-", "mdp": "-" }
+    });
 
-        var user = document.getElementById("username");
-        var mdp = document.getElementById("mdp");
+    function VerifyLogin() {
+
+        var user = document.getElementById("username").value;
+        var mdp = document.getElementById("mdp").value;
+
+        console.log(user, mdp);
+
         if (user === '' || mdp === '') {
             alert("Please fill out all fields");
         }
         $.ajax({
             url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php",
             method: "POST",
-            data: { "user": user, "mdp": mdp }
+            data: { "user": user, "mdp": mdp },
+            success: function (result) {
+                if (result) {
+                    window.location.href = "./Home";
+                }
+                else {
+                    alert("Wrong user or password");
+                }
+            }
         });
-
-        await fetch("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php")
-            .then(function (data) {
-                console.log(data);
-            });
-
-        setTimeout(
-            function () {
-                window.location.href = "/Home";
-            }, 100000
-        );
     }
 
     function goToRegister() {
         setTimeout(
             function () {
-                window.location.href = "/Register";
+                window.location.href = "./Register";
             }, 10
         );
     }

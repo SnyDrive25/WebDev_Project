@@ -5,24 +5,17 @@
     // var_dump($_SESSION);
 
     //$_SESSION[] = isset($_GET[])?$_GET[]:"pas d'utilisateur";
-    
+
+    require "./server.php";
+
+    header('Content-type: application/json; charset=utf-8');
+
     $User = $_POST["user"];
-    $UserPW = $_POST["mdp"]; //password is hashed
+    $UserPW = $_POST["mdp"]; //password must be hashed
 
-    $SQL = "SELECT * FROM users WHERE username = '$User'";
-    $query = $pdo->exec("SELECT mdp FROM users WHERE username = '$User'");
-    $valid = $pdo->exec("SELECT COUNT(mdp) FROM users WHERE username = '$User'");
+    $valid = $pdo->query("SELECT COUNT(mdp) FROM users WHERE username = " . $pdo->quote($User) . " AND mdp = " . $pdo->quote($UserPW));
 
-    if ($valid != 0) {
-        if ($query != $UserPW) {
-            $Message = "Wrong password";
-        } else {
-            $Message = "Success";
-        }
-    } else {
-        $Message = "No account connected";
-    }
+    $valid2 = $valid->fetchColumn(0);
 
-    $response[] = array("Message" => $Message);
-    print(json_encode($response));
+    print(json_encode($valid2 != 0));
 ?>

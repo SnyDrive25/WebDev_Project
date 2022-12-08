@@ -64,10 +64,12 @@ export default function Home() {
       $.ajax({
         url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_publication.php",
         method: "POST",
-        data: { "msg": msg, "email": email, "titre": titre, "date": date }
+        data: { "msg": msg, "email": email, "titre": titre, "date": date },
+        success: function () {
+          document.getElementById('writeDiv').style.display = "none";
+          window.location.reload(true);
+        }
       });
-      document.getElementById('writeDiv').style.display = "none";
-      window.location.reload(true);
     }
   }
 
@@ -86,8 +88,8 @@ export default function Home() {
       </div>
       <div id="writeDiv">
         <button className="close" onClick={closeWrite}>X</button>
-        <input placeholder='Titre de la publication' className='titre_pub' id="titre"></input><span id="reste_titre"></span>
-        <textarea className="publicationInput noanimation" id="message" placeholder="Enter your message here"></textarea><span id="reste_message"></span>
+        <input placeholder='Titre de la publication' className='titre_pub' maxLength="45" id="titre"></input><span id="reste_titre"></span>
+        <textarea className="publicationInput noanimation" id="message" maxLength="395" placeholder="Enter your message here"></textarea><span id="reste_message"></span>
         <button className="send" onClick={() => sendPublication()}>Send message</button>
       </div>
     </div>
