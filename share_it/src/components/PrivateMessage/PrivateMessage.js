@@ -22,6 +22,9 @@ function PrivateMessage() {
     for (let pmessage of pmessages) {
         every_pmessages.push(
             <div className="bubble">
+                <div className="pp">
+                    <span>{pmessage.username}</span>
+                </div>
                 <div className="msg">
                     <span>{pmessage.content}</span>
                 </div>
@@ -37,17 +40,17 @@ function PrivateMessage() {
         msg.addEventListener("keydown", function (e) {
             if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
                 send(e);
+                document.getElementById("msg").value = "";
             }
         });
     }
 
     function send(e) {
-        var message = e.target.value;
+        var message = e.target.value.toString();
         if (message.length > 399) {
             alert("Character limit exceeded : You are not authorized to insert more than 400 words in your message.");
             return false;
         } else if (message.length === 0) {
-            alert("No message to send : Please ensure that you entered correctly your message in the textbox.");
             return false;
         }
         else {
@@ -66,21 +69,23 @@ function PrivateMessage() {
             $.ajax({
                 url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_message.php",
                 method: "POST",
-                data: { "content": message, "email1": email1, "email2": email2, "date_m": date }
+                data: { "content": message, "email1": email1, "email2": email2, "date_m": date },
+                success: function () {
+                    window.location.reload(true);
+                }
             });
-            window.location.reload(true);
         }
     }
 
     return (
-        <div className="messages">
+        <div className="messages noscroll">
             <div className="private">
                 <div className="private-title">
                     <a href="/Messages">↩</a>
                     <a href="/Profile">{user}</a>
                 </div>
                 {every_pmessages}
-                <input id="msg" className="sendMessage large" placeholder="Type a message"></input>
+                <input id="msg" type="text" className="sendMessage large" placeholder="Type a message"></input>
             </div>
         </div>
     );
