@@ -20,14 +20,6 @@ function Profilepage() {
     const allreshares = [];
     const allliked = [];
 
-    function moreContent(contenu, id) {
-        document.getElementById('content' + id).textContent = contenu;
-    }
-
-    function lessContent(contenu, id) {
-        document.getElementById('content' + id).textContent = contenu.slice(0, 400);
-    }
-
     for (let share of history.shares) {
         remplir(share, allshares);
     }
@@ -45,11 +37,7 @@ function Profilepage() {
             <article>
                 <h1>{input.title}</h1>
                 <br></br>
-                <p className="contenu" id={"content" + input.id}>{input.content.slice(0, 400)}</p>
-                <p className="link">
-                    <button onClick={() => moreContent(input.content, input.id)} className="link">[See more]</button>
-                    <button onClick={() => lessContent(input.content, input.id)} className="link">[See less]</button>
-                </p>
+                <p className="contenu" id={"content" + input.id}>{input.content}</p>
                 <textarea type="text" className="comment" placeholder='Write a comment'></textarea>
             </article>
         )
