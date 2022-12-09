@@ -26,13 +26,11 @@ export default function Register() {
             $.ajax({
                 url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_user.php",
                 method: "POST",
-                data: { "email": email, "username": username, "mdp": mdp, "statut": statut }
-            });
-            setTimeout(
-                function () {
+                data: { "email": email, "username": username, "mdp": mdp, "statut": statut },
+                success: function () {
                     window.location.href = "/Login";
-                }, 10
-            );
+                }
+            });
         }
     }
 
