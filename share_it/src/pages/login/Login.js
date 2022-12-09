@@ -3,12 +3,6 @@ import $ from 'jquery';
 
 export default function Login() {
 
-    $.ajax({
-        url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php",
-        method: "POST",
-        data: { "user": "-", "mdp": "-" }
-    });
-
     function VerifyLogin() {
 
         var user = document.getElementById("username").value;
