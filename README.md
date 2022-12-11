@@ -65,8 +65,23 @@ Lastly, by clicking on the "Logout" button, the app redirects you to the login p
 
 
 ## Code Explanation
+For this app we decided to use react.js because it perfectly matched our project and is easy to use.
+
+This app contains a front end with the visuals and a back end with the data processing and storing.
+
+### Front
+
+The front is a bunch of pages and components with one single form sheet.
+All of them are javascript files but use HTML to construct the web page and the form sheet is in CSS.
+
+![pagesAndComponents](https://user-images.githubusercontent.com/113100516/206934306-d3ce9c12-d089-4362-85b1-94bb449f1467.png)
+
+// WORK IN PROGRESS
 
 
+### Back
+
+// DON'T KNOW 'BOUT THAT
 
 
 
