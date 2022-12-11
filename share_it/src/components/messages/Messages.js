@@ -15,7 +15,7 @@ function Messages() {
     const [messages, setMessages] = useState([]);
 
     const getMessages = async () => {
-        const res = await axios.get("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/abonnements.php");
+        const res = await axios.get("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/messages.php");
         setMessages(res.data);
     };
 
@@ -23,31 +23,33 @@ function Messages() {
         getMessages();
     }, []);
 
-    console.log(messages);
-
     const every_messages = [];
 
     for (let message of messages) {
         every_messages.push(
-            <div className="msg-title" onClick={""}>
-                <p>{message.email_users2}</p>
+            <div className="msg-title" onClick={openMessage(message.id_users2)}>
+                <p>{message.id_users2}</p>
                 <span>{message.content}</span>
             </div>
         );
+    }
+
+    function openMessage(id) {
+
     }
 
     var pseudo = document.getElementById("pseudo");
     if (pseudo) {
         pseudo.addEventListener("keydown", function (e) {
             if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-                send(e);
+                send();
                 document.getElementById("pseudo").value = "";
             }
         });
     }
 
-    function send(e) {
-        var pseudo = e.target.value.toString();
+    function send() {
+        var pseudo = document.getElementById("pseudo").value;
         if (pseudo.length > 50) {
             alert("Character limit exceeded : There are no pseudo with more than 50 letters.");
             return false;
@@ -64,14 +66,14 @@ function Messages() {
                 pad(date.getUTCHours()) + ":" +
                 pad(date.getUTCMinutes()) + ":" +
                 pad(date.getUTCSeconds());
-            var email = localStorage.getItem("email");
-            console.log(pseudo, email, date);
+            var my_email = localStorage.getItem("email");
             $.ajax({
                 url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_abonnement.php",
                 method: "POST",
-                data: { "email_user": email, "pseudo": pseudo, "date_m": date },
+                data: { "email": my_email, "pseudo": pseudo, "date_m": date },
                 success: function () {
-                    window.location.reload(true);
+                    console.log(my_email, pseudo, date);
+                    //window.location.reload(true);
                 }
             });
         }
