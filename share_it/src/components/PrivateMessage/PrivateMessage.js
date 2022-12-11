@@ -87,6 +87,12 @@ function PrivateMessage() {
                 {every_pmessages}
                 <input id="msg" type="text" className="sendMessage large" placeholder="Type a message"></input>
             </div>
+            {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
+                <p className='noaccess'>
+                    You must be logged in to access this page !
+                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
+                </p>
+            }
         </div>
     );
 }

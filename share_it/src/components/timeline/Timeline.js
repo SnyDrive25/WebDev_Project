@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import $ from 'jquery';
 
 function Timeline() {
 
@@ -16,8 +17,15 @@ function Timeline() {
     const [answer, setAnwser] = useState([]);
 
     const getAnswer = async () => {
-        const res = await axios.get("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php");
-        setAnwser(res.data);
+        $.ajax({
+            url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php",
+            method: "POST",
+            data: { "userid": 6 },
+            success: async function () {
+                const res = await axios.get("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php");
+                setAnwser(res.data);
+            }
+        });
     };
 
     useEffect(() => {
@@ -54,7 +62,13 @@ function Timeline() {
     return (
         <div className="timeline">
             {toutes_les_publis}
-        </div >
+            {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
+                <p className='noaccess'>
+                    You must be logged in to access this page !
+                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
+                </p>
+            }
+        </div>
     );
 }
 

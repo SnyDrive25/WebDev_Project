@@ -64,12 +64,12 @@ function Messages() {
                 pad(date.getUTCHours()) + ":" +
                 pad(date.getUTCMinutes()) + ":" +
                 pad(date.getUTCSeconds());
-            var email1 = "one@piece.com";
-            console.log(pseudo, email1, date);
+            var email = localStorage.getItem("email");
+            console.log(pseudo, email, date);
             $.ajax({
                 url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_abonnement.php",
                 method: "POST",
-                data: { "email_user": email1, "pseudo": pseudo, "date_m": date },
+                data: { "email_user": email, "pseudo": pseudo, "date_m": date },
                 success: function () {
                     window.location.reload(true);
                 }
@@ -81,6 +81,12 @@ function Messages() {
         <div className="messages">
             <input className="sendMessage" placeholder="Send message to... (enter Pseudo)" id="pseudo"></input>
             {every_messages}
+            {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
+                <p className='noaccess'>
+                    You must be logged in to access this page !
+                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
+                </p>
+            }
         </div >
     );
 }

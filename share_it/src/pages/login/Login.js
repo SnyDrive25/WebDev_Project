@@ -3,12 +3,21 @@ import $ from 'jquery';
 
 export default function Login() {
 
+    const getUserEmail = async (user) => {
+        $.ajax({
+            url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/get_email_from_user.php",
+            method: "POST",
+            data: { "user": user },
+            success: function (user) {
+                localStorage.setItem("email", user.email);
+            }
+        });
+    }
+
     function VerifyLogin() {
 
         var user = document.getElementById("username").value;
         var mdp = document.getElementById("mdp").value;
-
-        console.log(user, mdp);
 
         if (user === '' || mdp === '') {
             alert("Please fill out all fields");
@@ -17,9 +26,11 @@ export default function Login() {
             url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/login.php",
             method: "POST",
             data: { "user": user, "mdp": mdp },
-            success: function (result) {
+            success: async function (result) {
                 if (result) {
-                    window.location.href = "./Home";
+                    getUserEmail(user);
+                    localStorage.setItem("user", true);
+                    window.open("./Home", "_self");
                 }
                 else {
                     alert("Wrong user or password");

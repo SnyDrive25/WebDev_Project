@@ -77,6 +77,24 @@ textarea {
   transition: all.4s;
 }
 
+.noaccess {
+  z-index: 999999;
+  position: fixed;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  background-color: var(--bleu-light);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  color: var(--main-dark);
+}
+
 @media only screen and (min-width: 1500px) {
   .App {
     display: flex;

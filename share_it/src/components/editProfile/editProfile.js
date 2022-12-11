@@ -19,6 +19,13 @@ function EditProfile() {
                     <div className="saveProfile"><a href="/Profile">Save my profile</a></div>
                 </div>
             </div>
+            {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
+                <p className='noaccess'>
+                    You must be logged in to access this page !
+                    <br></br>
+                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
+                </p>
+            }
         </div>
     )
 }
