@@ -2,11 +2,15 @@
 
 require "./server.php";
 
-$email_user = $_POST["email_user"];
+$email = $_POST("email")
 $pseudo = $_POST["pseudo"];
 $date_m = $_POST["date_m"];
 
-$email_suivi = $pdo->exec("SELECT email FROM users WHERE username = " . $pdo->quote($pseudo))->fetchColumn(0);
-$query = $pdo->exec("INSERT INTO abonnement (email_user, email_suivi, date_m) VALUES (" . $pdo->quote($email_user) . ", " . $pdo->quote($email_suivi) . ", " . $pdo->quote($date_m) . ")");
+$request1 = $pdo->exec("SELECT id FROM users WHERE email = " . $pdo->quote($email));
+$myid = $request1->fetchColumn(0);
+$request2 = $pdo->exec("SELECT id FROM users WHERE username = " . $pdo->quote($pseudo));
+$peopleid = $request2->fetchColumn(0);
+
+$query = $pdo->exec("INSERT INTO message (content, id_users1, id_users2, date_m) VALUES ("'Hey'", " . $myid . ", " . $peopleid . ", " . $pdo->quote($date_m) . ")");
 
 ?>

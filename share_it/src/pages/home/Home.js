@@ -82,7 +82,6 @@ export default function Home() {
         {showAccordion()}
       </div>
       <div className="part20 bLeft block">
-        <input placeholder='Search...'></input>
         <Tendances></Tendances>
         <a href="/Home">Copyright ShareIt App © - 2022</a>
       </div>

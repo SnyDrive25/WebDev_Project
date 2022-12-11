@@ -19,6 +19,7 @@ function Tendances() {
 
     return (
         <div className="tendances">
+            <br></br>
             <span>Tendances</span>
             {toutes_les_tendances}
         </div >
