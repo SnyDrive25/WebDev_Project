@@ -3,9 +3,7 @@ import Login from "./pages/login/Login"
 import Register from "./pages/register/Register"
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import './App.css';
-
 
 export default function App() {
   return (

@@ -89,7 +89,6 @@ function Profilepage() {
                     <button className="editprofile shadow"><a href="/editProfile">Edit my profile</a></button>
                 </div>
             </div>
-
             <div className="statsProfile">
                 <p className="username">{stats.username}</p>
                 <p>
@@ -97,7 +96,6 @@ function Profilepage() {
                     <a className="following" href="/Home">{stats.following} following</a>
                 </p>
             </div>
-
             <div className="profilebox">
                 <div className="flex navProfile">
                     <div><a onClick={() => setPage('shares')} href="/Profile">My shares</a></div>
@@ -109,6 +107,12 @@ function Profilepage() {
                     {goToPage()}
                 </div>
             </div>
+            {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
+                <p className='noaccess'>
+                    You must be logged in to access this page !
+                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
+                </p>
+            }
         </div>
     )
 }

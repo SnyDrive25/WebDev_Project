@@ -59,8 +59,8 @@ export default function Home() {
         pad(date.getUTCHours()) + ":" +
         pad(date.getUTCMinutes()) + ":" +
         pad(date.getUTCSeconds());
-      var email = "second@piece.com";
-      console.log(titre, msg, date, email);
+      var email = localStorage.getItem("email");
+      console.log(email);
       $.ajax({
         url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_publication.php",
         method: "POST",

@@ -11,7 +11,7 @@
     header('Content-type: application/json; charset=utf-8');
 
     $User = $_POST["user"];
-    $UserPW = $_POST["mdp"]; //password must be hashed
+    $UserPW = hash('sha256', $_POST["mdp"]);
 
     $valid = $pdo->query("SELECT COUNT(mdp) FROM users WHERE username = " . $pdo->quote($User) . " AND mdp = " . $pdo->quote($UserPW));
 
