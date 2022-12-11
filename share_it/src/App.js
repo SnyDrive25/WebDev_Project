@@ -16,7 +16,6 @@ export default function App() {
         <Route path="/Profile" element={<Home />}></Route>
         <Route path="/editProfile" element={<Home />}></Route>
         <Route path="/Messages" element={<Home />}></Route>
-        <Route path="/PrivateMessage" element={<Home />}></Route>
       </Routes>
     </Router>
   );

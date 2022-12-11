@@ -9,7 +9,9 @@ export default function Login() {
             method: "POST",
             data: { "user": user },
             success: function (user) {
-                localStorage.setItem("email", user.email);
+                console.log(user[0]);
+                localStorage.setItem("email", user[0].email);
+                localStorage.setItem("id_user", user[0].id);
             }
         });
     }
@@ -30,13 +32,15 @@ export default function Login() {
                 if (result) {
                     getUserEmail(user);
                     localStorage.setItem("user", true);
-                    window.open("./Home", "_self");
                 }
                 else {
                     alert("Wrong user or password");
                 }
             }
         });
+        setTimeout(function () {
+            window.location.href = "./Home";
+        }, 2000);
     }
 
     function goToRegister() {

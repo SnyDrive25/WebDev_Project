@@ -6,10 +6,10 @@
 
     $user = $_POST["user"];
 
-    $getmail = $pdo->query("SELECT email FROM users WHERE username = '" . $user . "'");
+    $getmail = $pdo->query("SELECT email, id FROM users WHERE username = '" . $user . "'");
     
-    $onlymail = $getmail->fetch(PDO::FETCH_ASSOC);
+    $mail_and_id = $getmail->fetchAll(PDO::FETCH_ASSOC);
     
-    print(json_encode($onlymail));
+    print(json_encode($mail_and_id));
 
 ?>

@@ -5,7 +5,6 @@ import Profilepage from '../../components/profile/Profile';
 import EditProfile from '../../components/editProfile/editProfile';
 import Register from '../register/Register';
 import Messages from '../../components/messages/Messages';
-import PrivateMessage from '../../components/PrivateMessage/PrivateMessage';
 import $ from 'jquery';
 
 export default function Home() {
@@ -24,9 +23,6 @@ export default function Home() {
         break;
       case '/Messages':
         content = <Messages></Messages>;
-        break;
-      case '/PrivateMessage':
-        content = <PrivateMessage></PrivateMessage>;
         break;
       default:
         content = <Timeline></Timeline>;
@@ -88,7 +84,7 @@ export default function Home() {
       <div id="writeDiv">
         <button className="close" onClick={closeWrite}>X</button>
         <input placeholder='Titre de la publication' className='titre_pub' maxLength="45" id="titre"></input><span id="reste_titre"></span>
-        <textarea className="publicationInput noanimation" id="message" maxLength="395" placeholder="Enter your message here"></textarea><span id="reste_message"></span>
+        <textarea className="publicationInput noanimation" id="message" maxLength="395" placeholder="Enter your message here"></textarea>
         <button className="send" onClick={() => sendPublication()}>Send message</button>
       </div>
     </div>
