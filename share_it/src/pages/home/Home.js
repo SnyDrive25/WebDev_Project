@@ -87,6 +87,9 @@ export default function Home() {
         <textarea className="publicationInput noanimation" id="message" maxLength="395" placeholder="Enter your message here"></textarea>
         <button className="send" onClick={() => sendPublication()}>Send message</button>
       </div>
+      {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
+        <p className='noaccess' onLoad={window.location.href = "./Login"}></p>
+      }
     </div>
   );
 }

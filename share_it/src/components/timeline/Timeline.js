@@ -63,10 +63,7 @@ function Timeline() {
         <div className="timeline">
             {toutes_les_publis}
             {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
-                <p className='noaccess'>
-                    You must be logged in to access this page !
-                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
-                </p>
+                <p className='noaccess' onLoad={window.location.href = "./Login"}></p>
             }
         </div>
     );

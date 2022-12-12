@@ -8,10 +8,6 @@ $mdp = hash('sha256', $_POST["mdp"]);
 $statut = $_POST["statut"];
 
 // Mise à jour des données dans la base de données 
-$sql = "UPDATE users SET username= '".$username."', profil_bio = '".$statut."', WHERE utilisateur_id = ".$utilisateur_id;
-if ($connection->query($sql) === TRUE) {
-    echo "Profil mis à jour.";
-} else {
-    echo "Erreur: " . $sql . "<br>" . $connection->error;
-}
+$sql = $pdo->exec("UPDATE users SET username = " . $pdo->quote($username) . ", statut = " . $pdo->quote($statut) . ", mdp = " . $pdo->quote($mdp) . " WHERE email = " . $pdo->quote($email));
+
 ?>

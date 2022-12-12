@@ -4,14 +4,6 @@ import axios from 'axios';
 
 function Messages() {
 
-    // const messages = [
-    //     { "id": 1, "name": "Alexandre" },
-    //     { "id": 2, "name": "Lucas" },
-    //     { "id": 3, "name": "Thomas" },
-    //     { "id": 4, "name": "Louis" },
-    //     { "id": 5, "name": "Sunil" },
-    // ];
-
     const [messages, setMessages] = useState([]);
 
     const [pmessages, setPmessages] = useState([]);
@@ -200,10 +192,7 @@ function Messages() {
                     <input id="msg" type="text" className="sendMessage large" placeholder="Type a message"></input>
                 </div>
                 {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
-                    <p className='noaccess'>
-                        You must be logged in to access this page !
-                        <button className='big-btn'><a href="./Login">Go to login page</a></button>
-                    </p>
+                    <p className='noaccess' onLoad={window.location.href = "./Login"}></p>
                 }
             </div>
         </div >

@@ -38,7 +38,9 @@ export default function Login() {
                 }
             }
         });
+        document.getElementById("loading").style.display = "block";
         setTimeout(function () {
+            document.getElementById("loading").style.display = "none";
             window.location.href = "./Home";
         }, 2000);
     }
@@ -64,6 +66,9 @@ export default function Login() {
                 <br />
                 <button name="login" id="login" onClick={() => VerifyLogin()}>Login</button>
                 <button id="register" onClick={() => goToRegister()}>Register</button>
+            </div>
+            <div id="loading">
+                <img src="https://flevix.com/wp-content/uploads/2019/07/Untitled-2.gif"></img>
             </div>
         </div>
     );

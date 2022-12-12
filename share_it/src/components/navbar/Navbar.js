@@ -7,7 +7,13 @@ function Navbar() {
 
     function disconnect() {
         localStorage.setItem("user", false);
-        window.open("./Login", "_self");
+        localStorage.removeItem("email");
+        localStorage.removeItem("id_user");
+        document.getElementById("loading").style.display = "block";
+        setTimeout(function () {
+            document.getElementById("loading").style.display = "none";
+            window.location.href = "./Login";
+        }, 2000);
     }
 
     return (
@@ -18,6 +24,9 @@ function Navbar() {
             <p><a href="/Profile" className="underline">Profile</a></p>
             <button className="big-btn share" onClick={openWrite}>Write</button>
             <button className="big-btn logout" onClick={disconnect}><span>Logout 🔒</span></button>
+            <div id="loading">
+                <img src="https://flevix.com/wp-content/uploads/2019/07/Untitled-2.gif"></img>
+            </div>
         </div >
     );
 }
