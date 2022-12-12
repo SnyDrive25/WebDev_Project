@@ -1118,17 +1118,6 @@ article textarea {
   text-transform: capitalize;
 }
 
-.comment {
-  overflow-x: hidden;
-  resize: none;
-  padding: 1.5%;
-  position: absolute;
-  bottom: 17px;
-  left: 0;
-  right: 0;
-  transition: all.4s;
-}
-
 .contenu {
   margin-top: 25px;
   color: var(--main-dark);
@@ -1187,12 +1176,62 @@ article textarea {
   border: .2em solid rgb(150, 0, 0, .7);
 }
 
-
 .link:hover {
   border-radius: 4px;
   transform: scale(1.01);
   filter: drop-shadow(4px 4px 7px var(--main-dark));
   cursor: pointer;
+}
+
+.comment {
+  overflow-x: hidden;
+  resize: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 1.5em;
+  margin-left: 1em;
+  width: 85%;
+  height: 1.5em;
+  transition: all.4s;
+}
+
+.sendcommentaire {
+  height: 100%;
+  margin: 0;
+  width: 15%;
+  min-width: fit-content;
+  background: linear-gradient(45deg, transparent, transparent);
+  border: none;
+  border-radius: 0 9px 9px 0;
+  transition: color.9s;
+}
+
+.sendcommentaire:hover {
+  background: linear-gradient(315deg, aqua, blue);
+  font-size: large;
+  color: var(--main-light);
+}
+
+.commentzone {
+  position: absolute;
+  bottom: 17px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  left: 2.5%;
+  width: 95%;
+  height: 4.5em;
+  background-color: var(--bleu-light);
+  border-radius: 9px;
+}
+
+.sep {
+  margin: 1%;
+  width: 96%;
+  height: 2px;
+  background-color: var(--main-dark);
+  opacity: .4;
+  border-radius: 10px;
 }
 
 /* FIN Timeline */

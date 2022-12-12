@@ -95,11 +95,15 @@ function Timeline() {
                     <button onClick={() => moreContent(publicc.contenu, publicc.id)} className="link">See more</button>
                     <button onClick={() => lessContent(publicc.contenu, publicc.id)} className="link">See less</button>
                 </p>
+                <p className='sep'></p>
+                Comments
                 <p className="contenu">
                     {all_comments[publicc.id]}
                 </p>
-                <textarea type="text" className="comment" placeholder='Write a comment' id={"commentaire" + publicc.id}></textarea>
-                <button onClick={() => sendComment(publicc.id)}>Send Comment</button>
+                <div className='commentzone'>
+                    <textarea type="text" className="comment noanimation" placeholder='Write a comment' id={"commentaire" + publicc.id}></textarea>
+                    <button onClick={() => sendComment(publicc.id)} className="sendcommentaire">Send Comment</button>
+                </div>
             </article>
         );
     }
