@@ -1,81 +1,40 @@
+import { useState, useEffect } from 'react';
+import $ from 'jquery';
+
 function Profilepage() {
 
-    const stats = { "username": "JohnDoe", "followers": 61, "following": 784 };
-    const history = {
-        "shares": [
-            { "id": "12", "title": "First share", "content": "Content of my fist share" },
-            { "id": "15", "title": "Share number 2", "content": "Here is my second share content" },
-        ],
-        "reshares": [
-            { "id": "9", "title": "The reshare 1", "content": "This is the fist reshare" },
-            { "id": "19", "title": "Rehare 2", "content": "Here comes the second reshare I made" }
-        ],
-        "liked": [
-            { "id": "14", "title": "Like 1", "content": "Look at my first like" },
-            { "id": "21", "title": "Second Like", "content": "My second like" }
-        ],
-    }
+    const stats = { "username": localStorage.getItem("email") };
 
-    const allshares = [];
-    const allreshares = [];
-    const allliked = [];
+    const [publis, setPublis] = useState([]);
 
-    for (let share of history.shares) {
-        remplir(share, allshares);
-    }
+    const getPublis = async () => {
+        $.ajax({
+            url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/get_publis_of_email.php",
+            method: "POST",
+            data: { "email": localStorage.getItem("email") },
+            success: function (res) {
+                setPublis(res);
+            }
+        });
+    };
 
-    for (let reshare of history.reshares) {
-        remplir(reshare, allreshares);
-    }
+    useEffect(() => {
+        getPublis();
+    }, []);
 
-    for (let like of history.liked) {
-        remplir(like, allliked);
-    }
+    const toutes_les_publis = [];
 
-    function remplir(input, output) {
-        output.push(
+    for (let publicc of publis) {
+        toutes_les_publis.push(
             <article>
-                <h1>{input.title}</h1>
+                <h1>{publicc.titre}</h1>
+                <a className='pubinfo pubuser' href={"mailto:" + publicc.email}>{publicc.email}</a>
+                <span className='pubinfo pubdate'>{publicc.date_m}</span>
                 <br></br>
-                <p className="contenu" id={"content" + input.id}>{input.content}</p>
+                <p className="contenu" id={"content" + publicc.id}>{publicc.contenu}</p>
                 <textarea type="text" className="comment" placeholder='Write a comment'></textarea>
-            </article>
-        )
-    }
-
-    const shares =
-        <div className="historyProfileDiv">
-            {allshares}
-        </div>
-        ;
-
-    const reshares =
-        <div className="historyProfileDiv">
-            {allreshares}
-        </div>
-        ;
-
-    const liked =
-        <div className="historyProfileDiv">
-            {allliked}
-        </div>
-        ;
-
-    function setPage(page) {
-        localStorage.setItem('page', page);
-    }
-
-    const goToPage = () => {
-        switch (localStorage.getItem('page')) {
-            case 'reshares':
-                return reshares;
-            case 'liked':
-                return liked;
-            case 'shares':
-                return shares;
-            default:
-                return shares;
-        }
+            </article >
+        );
     }
 
     return (
@@ -91,27 +50,12 @@ function Profilepage() {
             </div>
             <div className="statsProfile">
                 <p className="username">{stats.username}</p>
-                <p>
-                    <a className="followers" href="/Home">{stats.followers} followers</a>
-                    <a className="following" href="/Home">{stats.following} following</a>
-                </p>
             </div>
-            <div className="profilebox">
-                <div className="flex navProfile">
-                    <div><a onClick={() => setPage('shares')} href="/Profile">My shares</a></div>
-                    <div><a onClick={() => setPage('reshares')} href="/Profile">ReShares</a></div>
-                    <div><a onClick={() => setPage('liked')} href="/Profile">Shares liked</a></div>
-                </div>
-
-                <div className="profileContent">
-                    {goToPage()}
-                </div>
+            <div className="profileContent">
+                {toutes_les_publis}
             </div>
             {(localStorage.getItem("user") === "false" || localStorage.getItem("user") === null) &&
-                <p className='noaccess'>
-                    You must be logged in to access this page !
-                    <button className='big-btn'><a href="./Login">Go to login page</a></button>
-                </p>
+                <p className='noaccess' onLoad={window.location.href = "./Login"}></p>
             }
         </div>
     )

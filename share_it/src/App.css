@@ -122,6 +122,19 @@ textarea {
   background-color: transparent !important;
 }
 
+#loading {
+  display: none;
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(250, 250, 240, .5);
+}
+
 @media only screen and (min-width: 1500px) {
   .App {
     display: flex;
@@ -731,9 +744,9 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 96%;
-  height: calc(99%-2px);
+  height: 99vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   scrollbar-width: none;
   display: block;
   background-color: transparent;
@@ -747,7 +760,9 @@ p {
 }
 
 .bluebg {
-  position: relative;
+  position: sticky;
+  z-index: 1;
+  top: -1.2vh;
   background: linear-gradient(var(--bleu-dark) 55%, transparent 40%) no-repeat;
   transition: all.4s;
 }
@@ -778,6 +793,7 @@ p {
 .profile input {
   width: 90%;
   margin: 2.5%;
+  animation: none !important;
 }
 
 .profile {
@@ -808,6 +824,7 @@ p {
 .saveProfile {
   width: fit-content;
   background-color: var(--bleu-dark);
+  color: var(--main-light) !important;
   padding: 2%;
   border-radius: 25px;
   margin-left: auto;
@@ -820,10 +837,7 @@ p {
 .saveProfile:hover {
   box-shadow: 0 0 .2em var(--bleu-dark);
   transform: scale(.95);
-}
-
-.saveProfile a {
-  color: var(--main-light) !important;
+  cursor: pointer;
 }
 
 .shadow {
