@@ -15,12 +15,13 @@ function Timeline() {
     // ];
 
     const [answer, setAnwser] = useState([]);
+    const [all_comments, setAll_comments] = useState({});
 
     const getAnswer = async () => {
         $.ajax({
             url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php",
             method: "POST",
-            data: { "userid": 6 },
+            data: { "userid": localStorage.getItem("id_user") },
             success: async function () {
                 const res = await axios.get("https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/publication.php");
                 setAnwser(res.data);
@@ -32,8 +33,6 @@ function Timeline() {
         getAnswer();
     }, []);
 
-    const toutes_les_publis = [];
-
     function moreContent(contenu, id) {
         document.getElementById('content' + id).textContent = contenu;
     }
@@ -42,7 +41,49 @@ function Timeline() {
         document.getElementById('content' + id).textContent = contenu.slice(0, 100);
     }
 
+    function sendComment(id) {
+        var commentaire = document.getElementById("commentaire" + id).value;
+        if (commentaire.length > 395) {
+            alert("Character limit exceeded : There are no pseudo with more than 400 letters.");
+            return false;
+        } else if (commentaire.length === 0) {
+            return false;
+        }
+        else {
+            var pad = function (num) { return ('00' + num).slice(-2) };
+            var date;
+            date = new Date();
+            date = date.getUTCFullYear() + '-' +
+                pad(date.getUTCMonth() + 1) + '-' +
+                pad(date.getUTCDate()) + " " +
+                pad(date.getUTCHours()) + ":" +
+                pad(date.getUTCMinutes()) + ":" +
+                pad(date.getUTCSeconds());
+            var my_email = localStorage.getItem("email");
+            $.ajax({
+                url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/add_commentaire.php",
+                method: "POST",
+                data: { "email": my_email, "content": commentaire, "date": date, "id_pub": id, "id_user": localStorage.getItem("id_user") },
+                success: function () {
+                    window.location.reload(true);
+                }
+            });
+        }
+    }
+
+    const toutes_les_publis = [];
+
     for (let publicc of answer) {
+        $.ajax({
+            url: "https://sunilgoulamhous.esilv.olfsoftware.fr/td9/server/commentaires.php",
+            method: "POST",
+            data: { "id_pub": publicc.id },
+            success: function (res) {
+                if (all_comments[publicc.id] === undefined && res.length > 0) {
+                    setAll_comments({ ...all_comments, [publicc.id]: res[0].content });
+                }
+            }
+        });
         toutes_les_publis.push(
             <article>
                 <h1>{publicc.titre}</h1>
@@ -54,8 +95,12 @@ function Timeline() {
                     <button onClick={() => moreContent(publicc.contenu, publicc.id)} className="link">See more</button>
                     <button onClick={() => lessContent(publicc.contenu, publicc.id)} className="link">See less</button>
                 </p>
-                <textarea type="text" className="comment" placeholder='Write a comment'></textarea>
-            </article >
+                <p className="contenu">
+                    {all_comments[publicc.id]}
+                </p>
+                <textarea type="text" className="comment" placeholder='Write a comment' id={"commentaire" + publicc.id}></textarea>
+                <button onClick={() => sendComment(publicc.id)}>Send Comment</button>
+            </article>
         );
     }
 

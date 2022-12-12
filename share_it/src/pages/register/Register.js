@@ -45,7 +45,6 @@ export default function Register() {
     return (
         <div className="registerPage">
             <img src="https://sunilgoulamhous.esilv.olfsoftware.fr/td9/shareit.png" alt="ShareIt" id="logo" className='logogin'></img>
-            <h2>Welcome</h2>
             <div className="container">
                 <h3>Register</h3>
                 <br />
